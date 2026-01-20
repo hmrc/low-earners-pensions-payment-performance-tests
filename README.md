@@ -3,7 +3,7 @@ Low Earners Pensions Payment Performance Tests Link: https://github.com/hmrc/low
 Performance test suite for the Low Earners Pensions Payment, using performance-test-runner under the hood.
 
 1. Services to run (for local testing)
-   Start the docker desktop application (and make sure the mongodb is running on the docker) Start MPE services as follows: sm2 --start MPE_ALL To enable test only endpoint for local testing.
+   Start the docker desktop application (and make sure the mongodb is running on the docker) Start LEPP services as follows: sm2 --start LEPP_ALL To enable test only endpoint for local testing.
 
 2. To run smoke tests
    Run below command in terminal: sbt -Dperftest.runSmokeTest=true -DrunLocal=true "Gatling / test"
