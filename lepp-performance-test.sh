@@ -1,0 +1,1 @@
+sbt -Dperftest.runSmokeTest=false gatling:test

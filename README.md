@@ -1,69 +1,24 @@
-**This is a template README.md.  Be sure to update this with project specific content that describes your performance test project.**
+Low Earners Pensions Payment Performance Tests Link: https://github.com/hmrc/low-earners-pensions-payment-performance-tests
 
-# low-earners-pensions-payment-performance-tests
+Performance test suite for the Low Earners Pensions Payment, using performance-test-runner under the hood.
 
-Performance test suite for the `<digital service name>`, using [performance-test-runner](https://github.com/hmrc/performance-test-runner) under the hood.
+1. Services to run (for local testing)
+   Start the docker desktop application (and make sure the mongodb is running on the docker) Start MPE services as follows: sm2 --start MPE_ALL To enable test only endpoint for local testing.
 
-## Pre-requisites
+2. To run smoke tests
+   Run below command in terminal: sbt -Dperftest.runSmokeTest=true -DrunLocal=true "Gatling / test"
 
-### Services
+3. To run full tests
+   Run below command in terminal: sbt -DrunLocal=true "Gatling / test"
 
-Start Mongo Docker container following instructions from the [MDTP Handbook](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/developer-set-up/set-up-mongodb.html).
+3. To run full tests in staging
+   Go to Jenkins Performance Tests Job on Staging Click on 'Build with parameters' Enter branch name (leave blank if the tests needs to run from the main branch) Set below parameters: Load: 100 ramp_up: 1 constant_rate: 8 Then click 'Build'
 
-Start `PLATFORM_TEST_EXAMPLE_UI_TESTS` services as follows:
+5. Logging
+   The default log level for all HTTP requests is set to WARN. Configure logback.xml to update this if required.
 
-```bash
-sm2 --start PLATFORM_TEST_EXAMPLE_UI_TESTS
-```
+6. WARNING
+   Do NOT run a full performance test against staging from your local machine. Please implement a new performance test job and execute your job from the dashboard in Performance Jenkins.
 
-### Logging
-
-The default log level for all HTTP requests is set to `WARN`. Configure [logback.xml](src/test/resources/logback.xml) to update this if required.
-
-### WARNING :warning:
-
-Do **NOT** run a full performance test against staging from your local machine. Please [implement a new performance test job](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/mdtp-test-approach/performance-testing/performance-test-a-microservice/index.html) and execute your job from the dashboard in [Performance Jenkins](https://performance.tools.staging.tax.service.gov.uk).
-
-## Tests
-
-Run smoke test (locally) as follows:
-
-```bash
-sbt -Dperftest.runSmokeTest=true -DrunLocal=true gatling:test
-```
-
-Run full performance test (locally) as follows:
-
-```bash
-sbt -DrunLocal=true gatling:test
-```
-
-Run smoke test (staging) as follows:
-
-```bash
-sbt -Dperftest.runSmokeTest=true -DrunLocal=false gatling:test
-```
-
-## Scalafmt
-
-Check all project files are formatted as expected as follows:
-
-```bash
-sbt scalafmtCheckAll scalafmtCheck
-```
-
-Format `*.sbt` and `project/*.scala` files as follows:
-
-```bash
-sbt scalafmtSbt
-```
-
-Format all project files as follows:
-
-```bash
-sbt scalafmtAll
-```
-
-## License
-
-This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html").
+7. License
+   This code is open source software licensed under the Apache 2.0 License.
