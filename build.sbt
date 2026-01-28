@@ -16,4 +16,3 @@ lazy val root = (project in file("."))
           "uk.gov.hmrc" %% "performance-test-runner" % "6.3.0"
       ).map(_ % Test)
   )
-  )

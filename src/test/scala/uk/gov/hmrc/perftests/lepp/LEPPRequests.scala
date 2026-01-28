@@ -16,15 +16,13 @@
 
 package uk.gov.hmrc.perftests.lepp
 
-import io.gatling.core.Predef._
+import io.gatling.core.Predef.*
 import io.gatling.core.check.CheckBuilder
-import io.gatling.http.Predef._
+import io.gatling.http.Predef.*
 import io.gatling.http.request.builder.HttpRequestBuilder
 import uk.gov.hmrc.performance.conf.{HttpConfiguration, ServicesConfiguration}
 import io.gatling.core.check.regex.RegexCheckType
 import io.gatling.core.session.Expression
-
-import scala.util.Random
 
 
 object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
@@ -49,9 +47,9 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
 
   val underpaymentBreakdownPageUrl: String = baseurl + "//low-earners-pensions-payment/underpayment/breakdown"
 
-  val standardPaymentBankDetailsPageUrl: String = baseurl + "//members-protections-and-enhancements/bank-details"
+  val standardPaymentBankDetailsPageUrl: String = baseurl + "//low-earners-pensions-payment/bank-details"
 
-  val underpaymentBankDetailsPageUrl: String = baseurl + "//members-protections-and-enhancements/underpayment/bank-details"
+  val underpaymentBankDetailsPageUrl: String = baseurl + "//low-earners-pensions-payment/underpayment/bank-details"
 
   val standardPaymentCYAPageUrl: String = baseurl + "//low-earners-pensions-payment/check-your-answers"
 
@@ -74,108 +72,73 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       .check(css("input[name=csrfToken]", "value").saveAs("csrfToken"))
   }
 
-  def postLogin: HttpRequestBuilder = {
-    http("Post Login Details")
+  def postLoginStandardPayment: HttpRequestBuilder = {
+    http("Post Login Details Standard Payment")
       .post(loginUrl)
       .formParam("csrfToken", _("csrfToken").as[String])
-      .formParam("authorityId", _ => "")
-      .formParam("gatewayToken",_ => "")
-      .formParam("redirectionUrl",_ => "")
+      .formParam("redirectionUrl",_ => standardPaymentStartPageUrl)
       .formParam("credentialStrength",_ => "strong")
-      .formParam("confidenceLevel",_ => "50")
-      .formParam("affinityGroup",_ => "Agent")
-      .formParam("usersName",_ => "")
-      .formParam("email",_ => "user@test.com")
-      .formParam("credentialRole",_ => "User")
-      .formParam("nino",_ => "")
-      .formParam("groupIdentifier",_ => "")
-      .formParam("agent.agentId",_ => "")
-      .formParam("agent.agentCode",_ => "")
-      .formParam("agent.agentFriendlyName",_ => "")
-      .formParam("unreadMessageCount",_ => "")
-      .formParam("mdtp.sessionId",_ => "")
-      .formParam("mdtp.deviceId",_ => "")
-      .formParam("presets-dropdown",_ => "SA")
-      .formParam("enrolment[0].name",_ => "")
-      .formParam("enrolment[0].taxIdentifier[0].name",_ => "")
-      .formParam("enrolment[0].taxIdentifier[0].value",_ => "")
-      .formParam("enrolment[0].state",_ => "Activated")
-      .formParam("enrolment[1].name",_ => "")
-      .formParam("enrolment[1].taxIdentifier[0].name",_ => "")
-      .formParam("enrolment[1].taxIdentifier[0].value",_ => "")
-      .formParam("enrolment[1].state",_ => "Activated")
-      .formParam("enrolment[2].name",_ => "")
-      .formParam("enrolment[2].taxIdentifier[0].name",_ => "")
-      .formParam("enrolment[2].taxIdentifier[0].value",_ => "")
-      .formParam("enrolment[2].state",_ => "Activated")
-      .formParam("enrolment[3].name",_ => "")
-      .formParam("enrolment[3].taxIdentifier[0].name",_ => "")
-      .formParam("enrolment[3].taxIdentifier[0].value",_ => "")
-      .formParam("enrolment[3].state",_ => "Activated")
-      .formParam("enrolment[4].name",_ => "")
-      .formParam("enrolment[4].taxIdentifier[0].name",_ => "")
-      .formParam("enrolment[4].taxIdentifier[0].value",_ => "")
-      .formParam("enrolment[4].state",_ => "Activated")
-      .formParam("itmp.givenName",_ => "")
-      .formParam("itmp.middleName",_ => "")
-      .formParam("itmp.familyName",_ => "")
-      .formParam("itmp.dateOfBirth",_ => "")
-      .formParam("itmp.address.line1",_ => "")
-      .formParam("itmp.address.line2",_ => "")
-      .formParam("itmp.address.line3",_ => "")
-      .formParam("itmp.address.line4",_ => "")
-      .formParam("itmp.address.line5",_ => "")
-      .formParam("itmp.address.postCode",_ => "")
-      .formParam("itmp.address.countryName",_ => "")
-      .formParam("itmp.address.countryCode",_ => "")
+      .formParam("confidenceLevel",_ => "250")
+      .formParam("nino",_ => "AA123456D")
+      .check(status.is(303))
+  }
+
+  def postLoginUnderpayment: HttpRequestBuilder = {
+    http("Post Login Details Underpayment")
+      .post(loginUrl)
+      .formParam("csrfToken", _("csrfToken").as[String])
+      .formParam("redirectionUrl", _ => underpaymentStartPageUrl)
+      .formParam("credentialStrength", _ => "strong")
+      .formParam("confidenceLevel", _ => "250")
+      .formParam("nino", _ => "AA123456D")
       .check(status.is(303))
   }
 
   def getStandardPaymentStartPage: HttpRequestBuilder = {
-    http("Get Start Page")
+    http("Get Start Page Standard Payment")
       .get(standardPaymentStartPageUrl: String)
       .check(status.is(200))
   }
 
   def getUnderpaymentStartPage: HttpRequestBuilder = {
-    http("Get Start Page")
+    http("Get Start Page Underpayment")
       .get(underpaymentStartPageUrl: String)
       .check(status.is(200))
   }
 
   def getStandardPaymentDashboardPage: HttpRequestBuilder = {
-    http("Get Start Page")
+    http("Get Dashboard Page Standard Payment")
       .get(standardPaymentDashboardPageUrl: String)
       .check(status.is(200))
   }
 
   def getUnderpaymentDashboardPage: HttpRequestBuilder = {
-    http("Get Start Page")
+    http("Get Dashboard Page Underpayment")
       .get(underpaymentDashboardPageUrl: String)
       .check(status.is(200))
   }
 
   def getStandardPaymentBreakdownPage: HttpRequestBuilder = {
-    http("Get Start Page")
+    http("Get Breakdown Page Standard Payment")
       .get(standardPaymentBreakdownPageUrl: String)
       .check(status.is(200))
   }
 
   def getUnderpaymentBreakdownPage: HttpRequestBuilder = {
-    http("Get Start Page")
+    http("Get Breakdown Page Underpayment")
       .get(underpaymentBreakdownPageUrl: String)
       .check(status.is(200))
   }
 
   def getStandardPaymentBankDetailsPage: HttpRequestBuilder = {
-    http("Get Members Details Page")
+    http("Get Bank Details Page Standard Payment")
       .get(standardPaymentBankDetailsPageUrl: String)
       .check(status.is(200))
       .check(css("input[name=csrfToken]", "value").saveAs("csrfToken"))
   }
 
   def postStandardPaymentBankDetailsPage: HttpRequestBuilder = {
-    http("Post to Member-Details Page")
+    http("Post to Bank Details Page Standard Payment")
       .post(standardPaymentBankDetailsPageUrl: String)
       .formParam("csrfToken", _("csrfToken").as[String])
       .formParam("name",_=> "Teddy Sherringham")
@@ -186,14 +149,14 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
   }
 
   def getUnderpaymentBankDetailsPage: HttpRequestBuilder = {
-    http("Get Members Details Page")
+    http("Get Bank Details Page Underpayment")
       .get(underpaymentBankDetailsPageUrl: String)
       .check(status.is(200))
       .check(css("input[name=csrfToken]", "value").saveAs("csrfToken"))
   }
 
   def postUnderpaymentBankDetailsPage: HttpRequestBuilder = {
-    http("Post to Member-Details Page")
+    http("Post to Bank Details Page Underpayment")
       .post(standardPaymentBankDetailsPageUrl: String)
       .formParam("csrfToken", _("csrfToken").as[String])
       .formParam("name",_=> "John Smith")
@@ -204,39 +167,39 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
   }
 
   def getStandardPaymentCYAPage: HttpRequestBuilder = {
-    http("Get Check Your Answers Page")
+    http("Get Check Your Answers Page Standard Payment")
       .get(standardPaymentCYAPageUrl)
       .check(status.is(200))
   }
 
   def postStandardPaymentCYAPage: HttpRequestBuilder = {
-    http("Post Check Your Answers Page")
+    http("Post Check Your Answers Page Standard Payment")
       .post(standardPaymentCYAPageUrl)
       .formParam("csrfToken", _("csrfToken").as[String])
       .check(status.is(303))
   }
 
   def getUnderpaymentCYAPage: HttpRequestBuilder = {
-    http("Get Check Your Answers Page")
+    http("Get Check Your Answers Page Underpayment")
       .get(underpaymentCYAPageUrl)
       .check(status.is(200))
   }
 
   def postUnderpaymentCYAPage: HttpRequestBuilder = {
-    http("Post Check Your Answers Page")
+    http("Post Check Your Answers Page Underpayment")
       .post(underpaymentCYAPageUrl)
       .formParam("csrfToken", _("csrfToken").as[String])
       .check(status.is(303))
   }
 
   def getStandardPaymentConfirmationPage: HttpRequestBuilder = {
-    http("Get Results Page")
+    http("Get Confirmation Page Standard Payment")
       .get(standardPaymentConfirmationPageUrl)
       .check(status.is(200))
   }
 
   def getUnderpaymentConfirmationPage: HttpRequestBuilder = {
-    http("Get Results Page")
+    http("Get Confirmation Page Underpayment")
       .get(underpaymentConfirmationPageUrl)
       .check(status.is(200))
   }
