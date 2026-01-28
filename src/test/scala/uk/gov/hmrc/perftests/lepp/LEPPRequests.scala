@@ -80,6 +80,8 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       .formParam("credentialStrength",_ => "strong")
       .formParam("confidenceLevel",_ => "250")
       .formParam("nino",_ => "AA123456D")
+      .formParam("affinityGroup",_ => "Individual")
+      .formParam("authorityId", _ => "someId")
       .check(status.is(303))
   }
 
@@ -91,6 +93,8 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       .formParam("credentialStrength", _ => "strong")
       .formParam("confidenceLevel", _ => "250")
       .formParam("nino", _ => "AA123456D")
+      .formParam("affinityGroup",_ => "Individual")
+      .formParam("authorityId", _ => "someId")
       .check(status.is(303))
   }
 
