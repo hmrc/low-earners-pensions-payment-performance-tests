@@ -1,0 +1,3068 @@
+[info] welcome to sbt 1.11.4 (Eclipse Adoptium Java 21.0.3)
+[info] loading settings for project low-earners-pensions-payment-performance-tests-build from plugins.sbt...
+[info] loading project definition from /Users/pankajrode/IdeaProjects/LEPP/low-earners-pensions-payment-performance-tests/project
+[info] SbtAutoBuildPlugin - adding projectSettings
+[info] loading settings for project root from build.sbt...
+[info] SbtAutoBuildPlugin - adding global settings
+[info] SbtAutoBuildPlugin - repository is marked public. Licence headers will be added to all source files
+[info] set current project to low-earners-pensions-payment-performance-tests (in build file:/Users/pankajrode/IdeaProjects/LEPP/low-earners-pensions-payment-performance-tests/)
+11:52:49.973 [INFO ] io.gatling.core.config.GatlingConfiguration$ - Gatling will try to load 'gatling.conf' config file as ClassLoader resource.
+11:52:50.057 [DEBUG] io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+11:52:50.069 [DEBUG] io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false
+11:52:50.069 [DEBUG] io.netty.util.internal.PlatformDependent0 - Java version: 21
+11:52:50.070 [DEBUG] io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+11:52:50.070 [DEBUG] io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe base methods: all available
+11:52:50.070 [DEBUG] io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.storeFence: available
+11:52:50.070 [DEBUG] io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+11:52:50.070 [DEBUG] io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable: Reflective setAccessible(true) disabled
+11:52:50.071 [DEBUG] io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
+11:52:50.072 [DEBUG] io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): available
+11:52:50.073 [DEBUG] io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, {int,long}): unavailable
+11:52:50.073 [DEBUG] io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+11:52:50.073 [DEBUG] io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/_x/9zpwxky515n21n61vg5ymfhr0000gn/T (java.io.tmpdir)
+11:52:50.073 [DEBUG] io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+11:52:50.074 [DEBUG] io.netty.util.internal.PlatformDependent - Platform: MacOS
+11:52:50.074 [DEBUG] io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: -1 bytes
+11:52:50.075 [DEBUG] io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: 1024
+11:52:50.075 [DEBUG] io.netty.util.internal.CleanerJava9 - java.nio.ByteBuffer.cleaner(): available
+11:52:50.075 [DEBUG] io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+11:52:50.078 [DEBUG] io.netty.util.internal.NativeLibraryLoader - -Dio.netty.native.workdir: /var/folders/_x/9zpwxky515n21n61vg5ymfhr0000gn/T (io.netty.tmpdir)
+11:52:50.078 [DEBUG] io.netty.util.internal.NativeLibraryLoader - -Dio.netty.native.deleteLibAfterLoading: true
+11:52:50.078 [DEBUG] io.netty.util.internal.NativeLibraryLoader - -Dio.netty.native.tryPatchShadedId: true
+11:52:50.078 [DEBUG] io.netty.util.internal.NativeLibraryLoader - -Dio.netty.native.detectNativeLibraryDuplicates: true
+11:52:50.359 [DEBUG] io.netty.util.internal.NativeLibraryLoader - Successfully loaded the library /var/folders/_x/9zpwxky515n21n61vg5ymfhr0000gn/T/libnetty_tcnative_osx_aarch_644843702894041341164.dylib
+11:52:50.359 [DEBUG] io.netty.util.internal.NativeLibraryLoader - Loaded library with name 'netty_tcnative_osx_aarch_64'
+11:52:50.360 [DEBUG] io.netty.handler.ssl.OpenSsl - Initialize netty-tcnative using engine: 'default'
+11:52:50.360 [DEBUG] io.netty.handler.ssl.OpenSsl - netty-tcnative using native library: BoringSSL
+11:52:50.440 [DEBUG] io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple
+11:52:50.440 [DEBUG] io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4
+11:52:50.444 [DEBUG] io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true
+11:52:50.444 [DEBUG] io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true
+11:52:50.444 [DEBUG] io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@71a45448
+11:52:50.454 [DEBUG] io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+11:52:50.454 [DEBUG] io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+11:52:50.455 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 20
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 20
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 9
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 4194304
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.useCacheForAllThreads: false
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+11:52:50.456 [DEBUG] io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.disableCacheFinalizersForFastThreadLocalThreads: false
+11:52:50.460 [DEBUG] io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: pooled
+11:52:50.460 [DEBUG] io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 0
+11:52:50.460 [DEBUG] io.netty.buffer.ByteBufUtil - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+11:52:50.461 [DEBUG] io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@e318ae9
+11:52:50.465 [DEBUG] io.netty.util.Recycler - -Dio.netty.recycler.maxCapacityPerThread: 4096
+11:52:50.465 [DEBUG] io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8
+11:52:50.465 [DEBUG] io.netty.util.Recycler - -Dio.netty.recycler.chunkSize: 32
+11:52:50.465 [DEBUG] io.netty.util.Recycler - -Dio.netty.recycler.blocking: false
+11:52:50.465 [DEBUG] io.netty.util.Recycler - -Dio.netty.recycler.batchFastThreadLocalOnly: true
+11:52:50.468 [DEBUG] io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 => ECDHE-ECDSA-AES128-GCM-SHA256
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 => ECDHE-ECDSA-AES128-GCM-SHA256
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 => ECDHE-RSA-AES128-GCM-SHA256
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_RSA_WITH_AES_128_GCM_SHA256 => ECDHE-RSA-AES128-GCM-SHA256
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 => ECDHE-ECDSA-AES256-GCM-SHA384
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 => ECDHE-ECDSA-AES256-GCM-SHA384
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 => ECDHE-RSA-AES256-GCM-SHA384
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_RSA_WITH_AES_256_GCM_SHA384 => ECDHE-RSA-AES256-GCM-SHA384
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 => ECDHE-ECDSA-CHACHA20-POLY1305
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 => ECDHE-ECDSA-CHACHA20-POLY1305
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 => ECDHE-RSA-CHACHA20-POLY1305
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 => ECDHE-RSA-CHACHA20-POLY1305
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256 => ECDHE-PSK-CHACHA20-POLY1305
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256 => ECDHE-PSK-CHACHA20-POLY1305
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA => ECDHE-ECDSA-AES128-SHA
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_ECDSA_WITH_AES_128_CBC_SHA => ECDHE-ECDSA-AES128-SHA
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA => ECDHE-RSA-AES128-SHA
+11:52:50.475 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA => ECDHE-RSA-AES128-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_PSK_WITH_AES_128_CBC_SHA => ECDHE-PSK-AES128-CBC-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_PSK_WITH_AES_128_CBC_SHA => ECDHE-PSK-AES128-CBC-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA => ECDHE-ECDSA-AES256-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_ECDSA_WITH_AES_256_CBC_SHA => ECDHE-ECDSA-AES256-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA => ECDHE-RSA-AES256-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA => ECDHE-RSA-AES256-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_ECDHE_PSK_WITH_AES_256_CBC_SHA => ECDHE-PSK-AES256-CBC-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_ECDHE_PSK_WITH_AES_256_CBC_SHA => ECDHE-PSK-AES256-CBC-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_RSA_WITH_AES_128_GCM_SHA256 => AES128-GCM-SHA256
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_RSA_WITH_AES_128_GCM_SHA256 => AES128-GCM-SHA256
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_RSA_WITH_AES_256_GCM_SHA384 => AES256-GCM-SHA384
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_RSA_WITH_AES_256_GCM_SHA384 => AES256-GCM-SHA384
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_RSA_WITH_AES_128_CBC_SHA => AES128-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_RSA_WITH_AES_128_CBC_SHA => AES128-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_PSK_WITH_AES_128_CBC_SHA => PSK-AES128-CBC-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_PSK_WITH_AES_128_CBC_SHA => PSK-AES128-CBC-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_RSA_WITH_AES_256_CBC_SHA => AES256-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_RSA_WITH_AES_256_CBC_SHA => AES256-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: TLS_PSK_WITH_AES_256_CBC_SHA => PSK-AES256-CBC-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.CipherSuiteConverter - Cipher suite mapping: SSL_PSK_WITH_AES_256_CBC_SHA => PSK-AES256-CBC-SHA
+11:52:50.476 [DEBUG] io.netty.handler.ssl.OpenSsl - Supported protocols (OpenSSL): [SSLv2Hello, TLSv1, TLSv1.1, TLSv1.2, TLSv1.3] 
+11:52:50.476 [DEBUG] io.netty.handler.ssl.OpenSsl - Default cipher suites (OpenSSL): [TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384, TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384, TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384, TLS_CHACHA20_POLY1305_SHA256]
+11:52:50.511 [DEBUG] io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 20
+11:52:50.515 [DEBUG] io.netty.util.concurrent.GlobalEventExecutor - -Dio.netty.globalEventExecutor.quietPeriodSeconds: 1
+11:52:50.519 [DEBUG] io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+11:52:50.519 [DEBUG] io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+11:52:51.027 [INFO ] uk.gov.hmrc.performance.simulation.PerformanceTestRunner - Setting up simulation 
+11:52:51.027 [INFO ] uk.gov.hmrc.performance.simulation.PerformanceTestRunner - 'perftest.runSmokeTest' is set to true, ignoring all loads and running with only one user per journey!
+11:52:51.027 [INFO ] uk.gov.hmrc.performance.simulation.JourneySetup - Implemented journey parts: low-earners-pensions-payment-standard-journey, low-earners-pensions-payment-underpayment-journey
+11:52:51.033 [INFO ] uk.gov.hmrc.performance.simulation.JourneySetup - Setting up scenario 'LEPP-E2E-journey' to run at 1.0 JPS and load to 100 %
+11:52:51.071 [DEBUG] io.gatling.http.engine.HttpEngine - Start warm up
+11:52:51.301 [DEBUG] io.gatling.http.client.pool.ChannelPool - No channel in the pool for key ChannelPoolKey{clientId=0, remoteKey=RemoteKey{targetHostBaseUrl='https://gatling.io', proxyHost='null', proxyPort=0}}
+11:52:51.418 [DEBUG] io.gatling.http.client.impl.DefaultHttpClient - Opening new channel to remote=[gatling.io/198.202.211.1:443] from local=null
+11:52:51.428 [DEBUG] io.netty.channel.DefaultChannelId - -Dio.netty.processId: 87541 (auto-detected)
+11:52:51.429 [DEBUG] io.netty.util.NetUtil - -Djava.net.preferIPv4Stack: false
+11:52:51.429 [DEBUG] io.netty.util.NetUtil - -Djava.net.preferIPv6Addresses: false
+11:52:51.431 [DEBUG] io.netty.util.NetUtilInitializations - Loopback interface: lo0 (lo0, 0:0:0:0:0:0:0:1%lo0)
+11:52:51.432 [DEBUG] io.netty.util.NetUtil - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+11:52:51.435 [DEBUG] io.netty.channel.DefaultChannelId - -Dio.netty.machineId: fa:46:e1:ff:fe:66:2a:05 (auto-detected)
+11:52:51.448 [DEBUG] io.netty.bootstrap.ChannelInitializerExtensions - -Dio.netty.bootstrap.extensions: null
+11:52:51.481 [DEBUG] io.gatling.http.client.impl.DefaultHttpClient - Connected to remoteAddress=gatling.io/198.202.211.1:443 from localAddress=/192.168.0.63:54342
+11:52:51.481 [DEBUG] io.gatling.http.client.impl.DefaultHttpClient - Installing SslHandler for gatling.io:443
+11:52:51.490 [DEBUG] io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@4c6cd214
+11:52:51.524 [DEBUG] io.netty.handler.ssl.util.InsecureTrustManagerFactory - Accepting a server certificate: CN=gatling.io
+11:52:51.525 [DEBUG] io.gatling.http.client.impl.DefaultHttpClient - TLS handshake successful: peerHost=gatling.io peerPort=443 protocol=TLSv1.3 cipher suite=TLS_AES_128_GCM_SHA256
+11:52:51.527 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Write request WritableRequest{request=DefaultFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: EmptyByteBufBE)
+GET / HTTP/1.1
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-US,en;q=0.5
+accept-encoding: gzip
+connection: close
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0
+host: gatling.io, content=null}
+11:52:51.534 [DEBUG] io.netty.handler.ssl.SslHandler - [id: 0x2087e0db, L:/192.168.0.63:54342 - R:gatling.io/198.202.211.1:443] HANDSHAKEN: protocol:TLSv1.3 cipher suite:TLS_AES_128_GCM_SHA256
+11:52:51.592 [DEBUG] io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@7e28c8eb
+11:52:51.597 [DEBUG] io.netty.handler.codec.compression.ZlibCodecFactory - -Dio.netty.noJdkZlibDecoder: false
+11:52:51.597 [DEBUG] io.netty.handler.codec.compression.ZlibCodecFactory - -Dio.netty.noJdkZlibEncoder: false
+11:52:51.600 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 OK
+Date: Wed, 28 Jan 2026 11:52:51 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: cloudflare
+CF-Ray: 9c50493a3a046ca7-MAN
+CF-Cache-Status: HIT
+Age: 73798
+Last-Modified: Tue, 27 Jan 2026 15:22:52 GMT
+Strict-Transport-Security: max-age=31536000
+surrogate-control: max-age=432000
+surrogate-key: gatling.io 685a8fe4ddca049f26333871 pageId:685a8fe4ddca049f26333870 685bbddcda38f942f0e21505 6878c637117d8e2326e74ab7 68809670a5aa1db64a23658c 685bf722e9cfdeb7c4a6feab
+x-lambda-id: b10ec41b-4f29-4a23-9ee4-bf71e5597869
+vary: accept-encoding
+Set-Cookie: _cfuvid=NcXrzz5mseEkOwXC.oMQIqeyC6YuFjns8E6SEGfv6KA-1769601171577-0.0.1.1-604800000; path=/; domain=.gatling.io; HttpOnly; Secure; SameSite=None
+alt-svc: h3=":443"; ma=86400
+content-encoding: gzip'
+11:52:51.601 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 913, cap: 1060), decoderResult: success)'
+11:52:51.604 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 4045, cap: 4096), decoderResult: success)'
+11:52:51.604 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 4427, cap: 8192), decoderResult: success)'
+11:52:51.604 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 5551, cap: 8192), decoderResult: success)'
+11:52:51.604 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 6428, cap: 8192), decoderResult: success)'
+11:52:51.604 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 7324, cap: 8192), decoderResult: success)'
+11:52:51.605 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 7008, cap: 8192), decoderResult: success)'
+11:52:51.605 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 3124, cap: 4096), decoderResult: success)'
+11:52:51.605 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 9463, cap: 16384), decoderResult: success)'
+11:52:51.605 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 6792, cap: 8192), decoderResult: success)'
+11:52:51.606 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: SimpleLeakAwareByteBuf(PooledUnsafeHeapByteBuf(ridx: 0, widx: 8168, cap: 8192)), decoderResult: success)'
+11:52:51.606 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 24808, cap: 32768), decoderResult: success)'
+11:52:51.606 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 4789, cap: 8192), decoderResult: success)'
+11:52:51.607 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 4293, cap: 8192), decoderResult: success)'
+11:52:51.607 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 7377, cap: 8192), decoderResult: success)'
+11:52:51.607 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 3262, cap: 4096), decoderResult: success)'
+11:52:51.607 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 7581, cap: 8192), decoderResult: success)'
+11:52:51.607 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 5647, cap: 8192), decoderResult: success)'
+11:52:51.608 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 3896, cap: 4096), decoderResult: success)'
+11:52:51.608 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 11880, cap: 16384), decoderResult: success)'
+11:52:51.608 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 9290, cap: 16384), decoderResult: success)'
+11:52:51.608 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 6927, cap: 8192), decoderResult: success)'
+11:52:51.608 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 20623, cap: 32768), decoderResult: success)'
+11:52:51.609 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 24268, cap: 32768), decoderResult: success)'
+11:52:51.609 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 24330, cap: 32768), decoderResult: success)'
+11:52:51.609 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 6645, cap: 8192), decoderResult: success)'
+11:52:51.609 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 14198, cap: 16384), decoderResult: success)'
+11:52:51.609 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 17391, cap: 32768), decoderResult: success)'
+11:52:51.610 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 10047, cap: 16384), decoderResult: success)'
+11:52:51.610 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 3323, cap: 4096), decoderResult: success)'
+11:52:51.610 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 3599, cap: 4096), decoderResult: success)'
+11:52:51.610 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 5632, cap: 8192), decoderResult: success)'
+11:52:51.610 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 7213, cap: 8192), decoderResult: success)'
+11:52:51.611 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 4193, cap: 8192), decoderResult: success)'
+11:52:51.611 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 4874, cap: 8192), decoderResult: success)'
+11:52:51.611 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledUnsafeHeapByteBuf(ridx: 0, widx: 2856, cap: 4096), decoderResult: success)'
+11:52:51.612 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='EmptyLastHttpContent'
+11:52:51.613 [DEBUG] io.gatling.http.engine.HttpEngine - Warm up request https://gatling.io successful
+11:52:51.614 [DEBUG] io.gatling.http.engine.HttpEngine - Warm up done
+Simulation uk.gov.hmrc.perftests.lepp.LEPPSimulation started...
+11:52:51.700 [INFO ] io.gatling.core.stats.writer.ConsoleDataWriter - Initializing
+11:52:51.700 [INFO ] io.gatling.core.stats.writer.LogFileDataWriter - Initializing
+11:52:51.702 [INFO ] io.gatling.core.stats.writer.ConsoleDataWriter - Initialized
+11:52:51.716 [INFO ] io.gatling.core.stats.writer.LogFileDataWriter - Initialized
+11:52:51.721 [INFO ] io.gatling.core.controller.inject.open.OpenWorkload - Scenario Low Earners Pensions Payment journey has finished injecting
+11:52:51.722 [INFO ] io.gatling.core.controller.inject.Injector - All scenarios have finished injecting
+11:52:51.722 [DEBUG] io.gatling.core.controller.inject.open.OpenWorkload - Start user #1
+11:52:51.732 [DEBUG] io.gatling.http.engine.tx.HttpTxExecutor - Sending request=get Login Details uri=http://localhost:9949/auth-login-stub/gg-sign-in?continue=/low-earners-pensions-payment: scenario=Low Earners Pensions Payment journey, userId=1
+11:52:51.734 [DEBUG] io.gatling.http.client.pool.ChannelPool - No channel in the pool for key ChannelPoolKey{clientId=1, remoteKey=RemoteKey{targetHostBaseUrl='http://localhost:9949', proxyHost='null', proxyPort=0}}
+11:52:51.736 [DEBUG] io.gatling.http.client.impl.DefaultHttpClient - Opening new channel to remote=[localhost/127.0.0.1:9949, localhost/[0:0:0:0:0:0:0:1]:9949] from local=null
+11:52:51.738 [DEBUG] io.gatling.http.client.impl.DefaultHttpClient - Connected to remoteAddress=localhost/127.0.0.1:9949 from localAddress=/127.0.0.1:54353
+11:52:51.738 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Write request WritableRequest{request=DefaultFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: EmptyByteBufBE)
+GET /auth-login-stub/gg-sign-in?continue=/low-earners-pensions-payment HTTP/1.1
+accept-language: en-gb,en;q=0.5
+accept-encoding: gzip, deflate
+accept: image/png,image/*;q=0.8,*/*;q=0.5
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:25.0) Gecko/20100101 Firefox/25.0
+True-Client-IP: 364291362
+host: localhost:9949, content=null}
+11:52:51.758 [DEBUG] io.netty.handler.codec.compression.Zstd - zstd-jni not in the classpath; Zstd support will be unavailable.
+11:52:51.759 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 OK
+Set-Cookie: mdtpdi=mdtpdi#95df55ef-8661-4fab-9792-ccf454e4ed25#1769601171741_P4wiWlp3FyQTb9sbY4slfQ==; Max-Age=315360000; Expires=Sat, 26 Jan 2036 11:52:51 GMT; SameSite=None; Path=/; Secure; HTTPOnly
+Set-Cookie: mdtp=FBpVn3Ln9EOeOTifzVAMzk+yYXzQR1VQfrp5r6du8DZvaOZUDtBlCOWuzLNzcN9D1/YMMHEtE3K5W2BGssDXVGmyDjDJaZm9r40C1UrmxHyrqJJDvmRpdA6ljXQe4rEpitZrh5EALqR3iOBxjV07nP0divOOsj1o3OCziZJdgXg6kZH7RVRbS+OOUqkZl5+luIpsL11owmtNfWErXXFAWY+76wXl4d52LwSM1HBECaVM8OOF2dGBn3QXFrUN92Dx8TKrWHZvU4gndegRSX09pJ9wF6Zy8FqLLiyvLZaGyLUFLk68FuOVWiCp; SameSite=Lax; Path=/; HTTPOnly
+Cache-Control: no-cache,no-store,max-age=0
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+X-Frame-Options: DENY
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Security-Policy: script-src 'nonce-x1vk2/dfe4LI/MZJQSpQWw==' 'unsafe-inline' 'strict-dynamic' https: http:; report-uri http://localhost:8861/content-security-policy-reports/auth-login-stub; object-src 'none'; base-uri 'none'
+X-Permitted-Cross-Domain-Policies: master-only
+Date: Wed, 28 Jan 2026 11:52:51 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 43395'
+11:52:51.759 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 873, cap: 873/873, unwrapped: PooledUnsafeDirectByteBuf(ridx: 2048, widx: 2048, cap: 2048)), decoderResult: success)'
+11:52:51.759 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 8192, cap: 8192/8192, unwrapped: PooledUnsafeDirectByteBuf(ridx: 8192, widx: 32768, cap: 32768)), decoderResult: success)'
+11:52:51.759 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 8192, cap: 8192/8192, unwrapped: PooledUnsafeDirectByteBuf(ridx: 16384, widx: 32768, cap: 32768)), decoderResult: success)'
+11:52:51.759 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 8192, cap: 8192/8192, unwrapped: PooledUnsafeDirectByteBuf(ridx: 24576, widx: 32768, cap: 32768)), decoderResult: success)'
+11:52:51.759 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 8192, cap: 8192/8192, unwrapped: PooledUnsafeDirectByteBuf(ridx: 32768, widx: 32768, cap: 32768)), decoderResult: success)'
+11:52:51.759 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 8192, cap: 8192/8192, unwrapped: PooledUnsafeDirectByteBuf(ridx: 8192, widx: 9754, cap: 65536)), decoderResult: success)'
+11:52:51.759 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultLastHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 1562, cap: 1562/1562, unwrapped: PooledUnsafeDirectByteBuf(ridx: 9754, widx: 9754, cap: 65536)), decoderResult: success)'
+11:52:51.759 [DEBUG] io.gatling.http.client.pool.ChannelPool - Offering channel entry ChannelPoolKey{clientId=1, remoteKey=RemoteKey{targetHostBaseUrl='http://localhost:9949', proxyHost='null', proxyPort=0}} to pool
+11:52:51.783 [DEBUG] jodd.lagarto.dom.LagartoDOMBuilderTagVisitor - LagartoDom tree created in 10 ms
+11:52:51.796 [DEBUG] io.gatling.http.engine.tx.HttpTxExecutor - Sending request=Post Login Details Standard Payment uri=http://localhost:9949/auth-login-stub/gg-sign-in?continue=/low-earners-pensions-payment: scenario=Low Earners Pensions Payment journey, userId=1
+11:52:51.796 [DEBUG] io.gatling.http.client.pool.ChannelPool - Retrieved HTTP/1 channel from pool for key ChannelPoolKey{clientId=1, remoteKey=RemoteKey{targetHostBaseUrl='http://localhost:9949', proxyHost='null', proxyPort=0}}
+11:52:51.797 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Write request WritableRequest{request=DefaultFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: PooledUnsafeDirectByteBuf(ridx: 0, widx: 237, cap: 237))
+POST /auth-login-stub/gg-sign-in?continue=/low-earners-pensions-payment HTTP/1.1
+accept-language: en-gb,en;q=0.5
+accept-encoding: gzip, deflate
+accept: image/png,image/*;q=0.8,*/*;q=0.5
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:25.0) Gecko/20100101 Firefox/25.0
+referer: http://localhost:9949/auth-login-stub/gg-sign-in?continue=/low-earners-pensions-payment
+True-Client-IP: 364291362
+cookie: mdtpdi=mdtpdi#95df55ef-8661-4fab-9792-ccf454e4ed25#1769601171741_P4wiWlp3FyQTb9sbY4slfQ==; mdtp=FBpVn3Ln9EOeOTifzVAMzk+yYXzQR1VQfrp5r6du8DZvaOZUDtBlCOWuzLNzcN9D1/YMMHEtE3K5W2BGssDXVGmyDjDJaZm9r40C1UrmxHyrqJJDvmRpdA6ljXQe4rEpitZrh5EALqR3iOBxjV07nP0divOOsj1o3OCziZJdgXg6kZH7RVRbS+OOUqkZl5+luIpsL11owmtNfWErXXFAWY+76wXl4d52LwSM1HBECaVM8OOF2dGBn3QXFrUN92Dx8TKrWHZvU4gndegRSX09pJ9wF6Zy8FqLLiyvLZaGyLUFLk68FuOVWiCp
+origin: http://localhost:9949
+host: localhost:9949
+content-type: application/x-www-form-urlencoded
+content-length: 237, content=null}
+11:52:51.813 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 400 Bad Request
+Set-Cookie: mdtpdi=mdtpdi#95df55ef-8661-4fab-9792-ccf454e4ed25#1769601171741_P4wiWlp3FyQTb9sbY4slfQ==; Max-Age=315360000; Expires=Sat, 26 Jan 2036 11:52:51 GMT; SameSite=None; Path=/; Secure; HTTPOnly
+Set-Cookie: mdtp=q1RnuQ0LXlA54rEAW5kuR+E8tNtOtLiRGLOqmZ3A3Ja2XBRwzf37A6JuQVGP2jX5PeIHDF49sphWrtclAFlYjfE+gxBKC7AIGNTuOwFG4mIQJLvZhoxMcmvND5USWV44kA8z4wNbzvKs1IlFvlV5gVJAVJT2SUPDGjI173LGN6zernJiNcmwLikKb2Y38KRhJ1zb80JFgaXQ2vJTSDIR8XdlBZKpbBU699fGDFp+9G+aEwGdNV8Q4+v1HtF+2zMeqaxHVaH8nKbufkZGxiBJqiJItq+0LkzBc4NnwDI5uOC/avkRv13ghFJE; SameSite=Lax; Path=/; HTTPOnly
+Cache-Control: no-cache,no-store,max-age=0
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+X-Frame-Options: DENY
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Security-Policy: script-src 'nonce-71Ly9O9IBAx61BcVddoXzA==' 'unsafe-inline' 'strict-dynamic' https: http:; report-uri http://localhost:8861/content-security-policy-reports/auth-login-stub; object-src 'none'; base-uri 'none'
+X-Permitted-Cross-Domain-Policies: master-only
+Date: Wed, 28 Jan 2026 11:52:51 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 34023'
+11:52:51.813 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 8192, cap: 8192/8192, unwrapped: PooledUnsafeDirectByteBuf(ridx: 9376, widx: 35207, cap: 65536)), decoderResult: success)'
+11:52:51.813 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 8192, cap: 8192/8192, unwrapped: PooledUnsafeDirectByteBuf(ridx: 17568, widx: 35207, cap: 65536)), decoderResult: success)'
+11:52:51.813 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 8192, cap: 8192/8192, unwrapped: PooledUnsafeDirectByteBuf(ridx: 25760, widx: 35207, cap: 65536)), decoderResult: success)'
+11:52:51.813 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 8192, cap: 8192/8192, unwrapped: PooledUnsafeDirectByteBuf(ridx: 33952, widx: 35207, cap: 65536)), decoderResult: success)'
+11:52:51.813 [DEBUG] io.gatling.http.client.impl.HttpAppHandler - Read msg='DefaultLastHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 1255, cap: 1255/1255, unwrapped: PooledUnsafeDirectByteBuf(ridx: 35207, widx: 35207, cap: 65536)), decoderResult: success)'
+11:52:51.813 [DEBUG] io.gatling.http.client.pool.ChannelPool - Offering channel entry ChannelPoolKey{clientId=1, remoteKey=RemoteKey{targetHostBaseUrl='http://localhost:9949', proxyHost='null', proxyPort=0}} to pool
+11:52:51.814 [DEBUG] io.gatling.http.engine.response.DefaultStatsProcessor - Request 'Post Login Details Standard Payment' failed for user 1: status.find.is(303), but actually found 400
+11:52:51.821 [DEBUG] io.gatling.http.engine.response.DefaultStatsProcessor - 
+>>>>>>>>>>>>>>>>>>>>>>>>>>
+Request:
+Post Login Details Standard Payment: KO status.find.is(303), but actually found 400
+=========================
+Session:
+Session(Low Earners Pensions Payment journey,1,HashMap(random -> 364291362, gatling.http.cache.dns -> io.gatling.http.resolver.ShufflingNameResolver@345a3c78, currentTime -> 1769601171723, 010a7e75-4b66-4778-9b72-c8ef980043f6 -> 0, gatling.http.ssl.sslContexts -> io.gatling.http.util.SslContexts@695a778b, gatling.http.referer -> http://localhost:9949/auth-login-stub/gg-sign-in?continue=/low-earners-pensions-payment, csrfToken -> 7e5a0340cc9ca5361501db2f235a90c6a53dc5de-1769601171744-30229a533e39bb34d283a6f2, gatling.http.cookies -> CookieJar(Map(CookieKey(mdtpdi,localhost,/) -> StoredCookie(mdtpdi=mdtpdi#95df55ef-8661-4fab-9792-ccf454e4ed25#1769601171741_P4wiWlp3FyQTb9sbY4slfQ==, path=/, maxAge=315360000s, secure, HTTPOnly, SameSite=None,true,true,1769601171813), CookieKey(mdtp,localhost,/) -> StoredCookie(mdtp=q1RnuQ0LXlA54rEAW5kuR+E8tNtOtLiRGLOqmZ3A3Ja2XBRwzf37A6JuQVGP2jX5PeIHDF49sphWrtclAFlYjfE+gxBKC7AIGNTuOwFG4mIQJLvZhoxMcmvND5USWV44kA8z4wNbzvKs1IlFvlV5gVJAVJT2SUPDGjI173LGN6zernJiNcmwLikKb2Y38KRhJ1zb80JFgaXQ2vJTSDIR8XdlBZKpbBU699fGDFp+9G+aEwGdNV8Q4+v1HtF+2zMeqaxHVaH8nKbufkZGxiBJqiJItq+0LkzBc4NnwDI5uOC/avkRv13ghFJE, path=/, HTTPOnly, SameSite=Lax,true,false,1769601171813)))),OK,List(GroupBlock(List(Standard Payment Journey),1769601171724,43,KO), TryMaxBlock(010a7e75-4b66-4778-9b72-c8ef980043f6,tryMax-1-inner,KO)),io.gatling.core.protocol.ProtocolComponentsRegistry$$Lambda/0x000000080052dae0@1fc79ff,io.netty.channel.nio.NioEventLoop@5cbec3b9)
+=========================
+HTTP request:
+POST http://localhost:9949/auth-login-stub/gg-sign-in?continue=/low-earners-pensions-payment
+headers:
+	accept-language: en-gb,en;q=0.5
+	accept-encoding: gzip, deflate
+	accept: image/png,image/*;q=0.8,*/*;q=0.5
+	user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:25.0) Gecko/20100101 Firefox/25.0
+	referer: http://localhost:9949/auth-login-stub/gg-sign-in?continue=/low-earners-pensions-payment
+	True-Client-IP: 364291362
+	cookie: mdtpdi=mdtpdi#95df55ef-8661-4fab-9792-ccf454e4ed25#1769601171741_P4wiWlp3FyQTb9sbY4slfQ==; mdtp=FBpVn3Ln9EOeOTifzVAMzk+yYXzQR1VQfrp5r6du8DZvaOZUDtBlCOWuzLNzcN9D1/YMMHEtE3K5W2BGssDXVGmyDjDJaZm9r40C1UrmxHyrqJJDvmRpdA6ljXQe4rEpitZrh5EALqR3iOBxjV07nP0divOOsj1o3OCziZJdgXg6kZH7RVRbS+OOUqkZl5+luIpsL11owmtNfWErXXFAWY+76wXl4d52LwSM1HBECaVM8OOF2dGBn3QXFrUN92Dx8TKrWHZvU4gndegRSX09pJ9wF6Zy8FqLLiyvLZaGyLUFLk68FuOVWiCp
+	origin: http://localhost:9949
+	host: localhost:9949
+	content-type: application/x-www-form-urlencoded
+	content-length: 237
+cookies:
+	mdtpdi=mdtpdi#95df55ef-8661-4fab-9792-ccf454e4ed25#1769601171741_P4wiWlp3FyQTb9sbY4slfQ==, path=/, maxAge=315360000s, secure, HTTPOnly, SameSite=None
+	mdtp=FBpVn3Ln9EOeOTifzVAMzk+yYXzQR1VQfrp5r6du8DZvaOZUDtBlCOWuzLNzcN9D1/YMMHEtE3K5W2BGssDXVGmyDjDJaZm9r40C1UrmxHyrqJJDvmRpdA6ljXQe4rEpitZrh5EALqR3iOBxjV07nP0divOOsj1o3OCziZJdgXg6kZH7RVRbS+OOUqkZl5+luIpsL11owmtNfWErXXFAWY+76wXl4d52LwSM1HBECaVM8OOF2dGBn3QXFrUN92Dx8TKrWHZvU4gndegRSX09pJ9wF6Zy8FqLLiyvLZaGyLUFLk68FuOVWiCp, path=/, HTTPOnly, SameSite=Lax
+body:FormUrlEncodedRequestBody{patchedContentType='application/x-www-form-urlencoded', charset=UTF-8, content=csrfToken=7e5a0340cc9ca5361501db2f235a90c6a53dc5de-1769601171744-30229a533e39bb34d283a6f2&redirectionUrl=http%3A%2F%2Flocalhost%3A7503%2F%2Flow-earners-pensions-payment%2Fstart&credentialStrength=strong&confidenceLevel=250&nino=AA123456D}
+=========================
+HTTP response:
+version:
+	HTTP/1.1
+status:
+	400 Bad Request
+headers:
+	Set-Cookie: mdtpdi=mdtpdi#95df55ef-8661-4fab-9792-ccf454e4ed25#1769601171741_P4wiWlp3FyQTb9sbY4slfQ==; Max-Age=315360000; Expires=Sat, 26 Jan 2036 11:52:51 GMT; SameSite=None; Path=/; Secure; HTTPOnly
+	Set-Cookie: mdtp=q1RnuQ0LXlA54rEAW5kuR+E8tNtOtLiRGLOqmZ3A3Ja2XBRwzf37A6JuQVGP2jX5PeIHDF49sphWrtclAFlYjfE+gxBKC7AIGNTuOwFG4mIQJLvZhoxMcmvND5USWV44kA8z4wNbzvKs1IlFvlV5gVJAVJT2SUPDGjI173LGN6zernJiNcmwLikKb2Y38KRhJ1zb80JFgaXQ2vJTSDIR8XdlBZKpbBU699fGDFp+9G+aEwGdNV8Q4+v1HtF+2zMeqaxHVaH8nKbufkZGxiBJqiJItq+0LkzBc4NnwDI5uOC/avkRv13ghFJE; SameSite=Lax; Path=/; HTTPOnly
+	Cache-Control: no-cache,no-store,max-age=0
+	Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+	X-Frame-Options: DENY
+	X-XSS-Protection: 1; mode=block
+	X-Content-Type-Options: nosniff
+	Content-Security-Policy: script-src 'nonce-71Ly9O9IBAx61BcVddoXzA==' 'unsafe-inline' 'strict-dynamic' https: http:; report-uri http://localhost:8861/content-security-policy-reports/auth-login-stub; object-src 'none'; base-uri 'none'
+	X-Permitted-Cross-Domain-Policies: master-only
+	Date: Wed, 28 Jan 2026 11:52:51 GMT
+	Content-Type: text/html; charset=UTF-8
+	Content-Length: 34023
+
+body:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="govuk-template  ">
+  <head>
+    <meta charset="utf-8">
+    <title>Authority Wizard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c"> 
+
+    
+      <link rel="icon" sizes="48x48" href="/auth-login-stub/hmrc-frontend/assets/govuk/images/favicon.ico">
+      <link rel="icon" sizes="any" href="/auth-login-stub/hmrc-frontend/assets/govuk/images/favicon.svg" type="image/svg+xml">
+      <link rel="mask-icon" href="/auth-login-stub/hmrc-frontend/assets/govuk/images/govuk-icon-mask.svg" color="blue">
+      <link rel="apple-touch-icon" href="/auth-login-stub/hmrc-frontend/assets/govuk/images/govuk-icon-180.png">
+      <link rel="manifest" href="/auth-login-stub/hmrc-frontend/assets/govuk/manifest.json">
+    
+
+    
+
+
+<link href="/auth-login-stub/hmrc-frontend/assets/hmrc-frontend-6.97.0.min.css" nonce="71Ly9O9IBAx61BcVddoXzA==" media="all" rel="stylesheet" type="text/css" />
+
+    <style>
+            .govuk-grid-column-two-thirds {
+                width: 100% !important;
+            }
+
+            .divider {
+                border-top: 2px solid #bfc1c3;
+                padding-top: 20px;
+            }
+
+            .itmp-label {
+                display: inline-block;
+                min-width: 130px;
+            }
+
+            #js-enrolments-table td {
+                vertical-align: top;
+            }
+
+            #js-enrolments-table input {
+                margin-bottom: 4px;
+            }
+
+            #js-delegated-enrolments-table td {
+                vertical-align: top;
+            }
+
+            #js-delegated-enrolments-table input {
+                margin-bottom: 4px;
+            }
+    </style>
+
+
+    
+    
+    <meta property="og:image" content="/auth-login-stub/hmrc-frontend/assets/govuk/images/govuk-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body ">
+    <script nonce="71Ly9O9IBAx61BcVddoXzA==">document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+    
+
+    
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+    
+
+    
+  
+  
+    
+
+
+
+
+
+<header>
+    <div class="govuk-header hmrc-header govuk-header--full-width-border" data-module="govuk-header"
+            >
+      <div class="govuk-header__container govuk-width-container">
+        <div class="govuk-header__logo">
+          <a href="https://www.gov.uk" class="govuk-header__link govuk-header__link--homepage">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<svg
+    focusable="false"
+    fill="currentcolor"
+    role=img
+    class=govuk-header__logotype
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 296 60"
+    height="30"
+    width="148"
+    aria-label=GOV.UK
+>
+    
+        <title>GOV.UK</title>
+    
+    
+      <g>
+        <circle cx="20" cy="17.6" r="3.7"/>
+        <circle cx="10.2" cy="23.5" r="3.7"/>
+        <circle cx="3.7" cy="33.2" r="3.7"/>
+        <circle cx="31.7" cy="30.6" r="3.7"/>
+        <circle cx="43.3" cy="17.6" r="3.7"/>
+        <circle cx="53.2" cy="23.5" r="3.7"/>
+        <circle cx="59.7" cy="33.2" r="3.7"/>
+        <circle cx="31.7" cy="30.6" r="3.7"/>
+        <path d="M33.1,9.8c.2-.1.3-.3.5-.5l4.6,2.4v-6.8l-4.6,1.5c-.1-.2-.3-.3-.5-.5l1.9-5.9h-6.7l1.9,5.9c-.2.1-.3.3-.5.5l-4.6-1.5v6.8l4.6-2.4c.1.2.3.3.5.5l-2.6,8c-.9,2.8,1.2,5.7,4.1,5.7h0c3,0,5.1-2.9,4.1-5.7l-2.6-8ZM37,37.9s-3.4,3.8-4.1,6.1c2.2,0,4.2-.5,6.4-2.8l-.7,8.5c-2-2.8-4.4-4.1-5.7-3.8.1,3.1.5,6.7,5.8,7.2,3.7.3,6.7-1.5,7-3.8.4-2.6-2-4.3-3.7-1.6-1.4-4.5,2.4-6.1,4.9-3.2-1.9-4.5-1.8-7.7,2.4-10.9,3,4,2.6,7.3-1.2,11.1,2.4-1.3,6.2,0,4,4.6-1.2-2.8-3.7-2.2-4.2.2-.3,1.7.7,3.7,3,4.2,1.9.3,4.7-.9,7-5.9-1.3,0-2.4.7-3.9,1.7l2.4-8c.6,2.3,1.4,3.7,2.2,4.5.6-1.6.5-2.8,0-5.3l5,1.8c-2.6,3.6-5.2,8.7-7.3,17.5-7.4-1.1-15.7-1.7-24.5-1.7h0c-8.8,0-17.1.6-24.5,1.7-2.1-8.9-4.7-13.9-7.3-17.5l5-1.8c-.5,2.5-.6,3.7,0,5.3.8-.8,1.6-2.3,2.2-4.5l2.4,8c-1.5-1-2.6-1.7-3.9-1.7,2.3,5,5.2,6.2,7,5.9,2.3-.4,3.3-2.4,3-4.2-.5-2.4-3-3.1-4.2-.2-2.2-4.6,1.6-6,4-4.6-3.7-3.7-4.2-7.1-1.2-11.1,4.2,3.2,4.3,6.4,2.4,10.9,2.5-2.8,6.3-1.3,4.9,3.2-1.8-2.7-4.1-1-3.7,1.6.3,2.3,3.3,4.1,7,3.8,5.4-.5,5.7-4.2,5.8-7.2-1.3-.2-3.7,1-5.7,3.8l-.7-8.5c2.2,2.3,4.2,2.7,6.4,2.8-.7-2.3-4.1-6.1-4.1-6.1h10.6,0Z"/>
+    </g>
+    
+    
+      
+        <path d="M88.6,33.2c0,1.8.2,3.4.6,5s1.2,3,2,4.4c1,1.2,2,2.2,3.4,3s3,1.2,5,1.2,3.4-.2,4.6-.8,2.2-1.4,3-2.2,1.2-1.8,1.6-3c.2-1,.4-2,.4-3v-.4h-10.6v-6.4h18.8v23h-7.4v-5c-.6.8-1.2,1.6-2,2.2-.8.6-1.6,1.2-2.6,1.8-1,.4-2,.8-3.2,1.2s-2.4.4-3.6.4c-3,0-5.8-.6-8-1.6-2.4-1.2-4.4-2.6-6-4.6s-2.8-4.2-3.6-6.8c-.6-2.8-1-5.6-1-8.6s.4-5.8,1.4-8.4,2.2-4.8,4-6.8,3.8-3.4,6.2-4.6c2.4-1.2,5.2-1.6,8.2-1.6s3.8.2,5.6.6c1.8.4,3.4,1.2,4.8,2s2.8,1.8,3.8,3c1.2,1.2,2,2.6,2.8,4l-7.4,4.2c-.4-.8-1-1.8-1.6-2.4-.6-.8-1.2-1.4-2-2s-1.6-1-2.6-1.4-2.2-.4-3.4-.4c-2,0-3.6.4-5,1.2-1.4.8-2.6,1.8-3.4,3-1,1.2-1.6,2.8-2,4.4-.6,1.6-.8,3.8-.8,5.4ZM161.4,24.6c-.8-2.6-2.2-4.8-4-6.8s-3.8-3.4-6.2-4.6c-2.4-1.2-5.2-1.6-8.4-1.6s-5.8.6-8.4,1.6c-2.2,1.2-4.4,2.8-6,4.6-1.8,2-3,4.2-4,6.8-.8,2.6-1.4,5.4-1.4,8.4s.4,5.8,1.4,8.4c.8,2.6,2.2,4.8,4,6.8s3.8,3.4,6.2,4.6c2.4,1.2,5.2,1.6,8.4,1.6s5.8-.6,8.4-1.6c2.4-1.2,4.6-2.6,6.2-4.6,1.8-2,3-4.2,4-6.8.8-2.6,1.4-5.4,1.4-8.4-.2-3-.6-5.8-1.6-8.4h0ZM154,33.2c0,2-.2,3.8-.8,5.4-.4,1.6-1.2,3.2-2.2,4.4s-2.2,2.2-3.4,2.8c-1.4.6-3,1-4.8,1s-3.4-.4-4.8-1-2.6-1.6-3.4-2.8c-1-1.2-1.6-2.6-2.2-4.4-.4-1.6-.8-3.4-.8-5.4v-.2c0-2,.2-3.8.8-5.4.4-1.6,1.2-3.2,2.2-4.4,1-1.2,2.2-2.2,3.4-2.8,1.4-.6,3-1,4.8-1s3.4.4,4.8,1,2.6,1.6,3.4,2.8c1,1.2,1.6,2.6,2.2,4.4.4,1.6.8,3.4.8,5.4v.2ZM177.8,54l-11.8-42h9.4l8,31.4h.2l8-31.4h9.4l-11.8,42h-11.4,0ZM235.4,46.7c1.2,0,2.4-.2,3.4-.6,1-.4,2-.8,2.8-1.6s1.4-1.6,1.8-2.8c.4-1.2.6-2.4.6-4V11.8h8.2v27.2c0,2.4-.4,4.4-1.2,6.2s-2,3.4-3.6,4.8c-1.4,1.4-3.2,2.4-5.4,3-2,.8-4.4,1-6.8,1s-4.8-.4-6.8-1c-2-.8-3.8-1.8-5.4-3-1.6-1.4-2.6-3-3.6-4.8-.8-1.8-1.2-4-1.2-6.2V11.7h8.4v26c0,1.6.2,2.8.6,4,.4,1.2,1,2,1.8,2.8s1.6,1.2,2.8,1.6c1.2.4,2.2.6,3.6.6h0ZM261.4,11.9h8.4v18.2l14.8-18.2h10.4l-14.4,16.8,15.4,25.2h-9.8l-11-18.8-5.4,6v12.8h-8.4V11.9h0ZM206.2,44.2c-3,0-5.4,2.4-5.4,5.4s2.4,5.4,5.4,5.4,5.4-2.4,5.4-5.4-2.4-5.4-5.4-5.4Z"/>
+      
+    
+</svg>
+
+            
+          </a>
+        </div>
+
+        
+      </div>
+    </div>
+    
+    
+        
+
+
+
+
+
+
+
+  <div class="govuk-service-navigation" data-module="govuk-service-navigation" >
+    
+  <div class="govuk-width-container">
+    
+
+    
+  <div class="govuk-service-navigation__container">
+    
+    
+  </div>
+
+
+    
+  </div>
+
+  </div>
+
+
+    
+    
+    
+    
+    
+</header>
+
+
+
+
+
+
+
+  
+
+
+
+
+    
+
+<div class="govuk-width-container">
+    
+    <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" >
+        
+    
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+
+    <h1 class="govuk-heading-l">Authority Wizard</h1>
+
+    <p class="govuk-body-lead">
+        Complete and submit the form to create a new authority record and attach the bearer token for that user to this
+        session.
+    </p>
+
+    
+
+    <form method="POST" novalidate action="/auth-login-stub/gg-sign-in" id="inputForm">
+        
+            <input type="hidden" name="csrfToken" value="1a05d6b69edd53ffbaf72590a8304389e79d8aa6-1769601171805-30229a533e39bb34d283a6f2"/>
+        
+        
+
+        
+            
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert"><h2 class="govuk-error-summary__title">There is an error on this page</h2>
+      <div class="govuk-error-summary__body">
+        
+        
+            <ul class="govuk-list govuk-error-summary__list">
+            
+                <li>
+                
+                    <a href="#authorityId">This field is required</a>
+                
+                </li>
+            
+                <li>
+                
+                    <a href="#affinityGroup">This field is required</a>
+                
+                </li>
+            
+            </ul>
+        
+      </div>
+  </div>
+</div>
+
+        
+
+        <p><input id="submit-top" class="govuk-button" type="submit" value="Submit"></p>
+
+        
+
+
+
+<div class="govuk-form-group govuk-form-group--error">
+  
+  
+    
+        
+      <label class="govuk-label" for="authorityId">
+        CredID
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="authorityId-hint" class="govuk-hint">
+  Optional - any random value but it does need to be unique within the Auth database.
+</div>
+
+
+
+<p id="authorityId-error" class="govuk-error-message" >
+ <span class="govuk-visually-hidden">Error:</span>
+ This field is required
+</p>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half govuk-input--error" 
+    id="authorityId" name="authorityId" type="text"   aria-describedby="authorityId-hint authorityId-error"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="gatewayToken">
+        Gateway Token
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="gatewayToken-hint" class="govuk-hint">
+  Optional - must be Base64-encoded if provided.
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="gatewayToken" name="gatewayToken" type="text"   aria-describedby="gatewayToken-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="redirectionUrl">
+        Redirect URL
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="redirectionUrl-hint" class="govuk-hint">
+  The URL to be redirected to when the authentication step is completed.
+</div>
+
+  
+  
+       <input class="govuk-input" 
+    id="redirectionUrl" name="redirectionUrl" type="text"   value="http://localhost:7503//low-earners-pensions-payment/start"  aria-describedby="redirectionUrl-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="excludeGnapToken">
+        Add GNAP Token
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="excludeGnapToken-hint" class="govuk-hint">
+  Add GNAP token to MDTP authorisation header. Always try and leave as "Yes". See <a class="govuk-link" href="https://github.com/hmrc/auth-login-stub#important-information-for-the-olfgca-integration-and-the-new-gnap-token-support-that-will-be-required">README</a> for more info.
+</div>
+
+  
+      
+      <select class="govuk-select" 
+    id="excludeGnapToken" name="excludeGnapToken"  aria-describedby="excludeGnapToken-hint"
+  >
+        
+          
+            
+            
+              <option value="false"
+                selected
+                 >Yes</option>
+            
+          
+        
+          
+            
+            
+              <option value="true"
+                
+                 >No</option>
+            
+          
+        
+      </select>
+      
+  
+
+
+
+</div>
+
+
+
+
+
+        
+
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="credentialStrength">
+        Credential Strength
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+      
+      <select class="govuk-select" 
+    id="credentialStrength" name="credentialStrength" 
+  >
+        
+          
+            
+            
+              <option value="strong"
+                selected
+                 >strong</option>
+            
+          
+        
+          
+            
+            
+              <option value="weak"
+                
+                 >weak</option>
+            
+          
+        
+          
+            
+            
+              <option value="none"
+                
+                 >none</option>
+            
+          
+        
+      </select>
+      
+  
+
+
+
+</div>
+
+
+
+
+
+        
+
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="confidenceLevel">
+        Confidence Level
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="confidenceLevel-hint" class="govuk-hint">
+  Confidence levels greater than 50 require a NINO to be provided.
+</div>
+
+  
+      
+      <select class="govuk-select" 
+    id="confidenceLevel" name="confidenceLevel"  aria-describedby="confidenceLevel-hint"
+  >
+        
+          
+            
+            
+              <option value="50"
+                
+                 >50</option>
+            
+          
+        
+          
+            
+            
+              <option value="200"
+                
+                 >200</option>
+            
+          
+        
+          
+            
+            
+              <option value="250"
+                selected
+                 >250</option>
+            
+          
+        
+          
+            
+            
+              <option value="600"
+                
+                 >600</option>
+            
+          
+        
+      </select>
+      
+  
+
+
+
+</div>
+
+
+
+
+
+        
+
+
+
+
+<div class="govuk-form-group govuk-form-group--error">
+  
+  
+    
+        
+      <label class="govuk-label" for="affinityGroupSelect">
+        Affinity Group
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+<p id="affinityGroupSelect-error" class="govuk-error-message" >
+ <span class="govuk-visually-hidden">Error:</span>
+ This field is required
+</p>
+
+  
+      
+      <select class="govuk-select govuk-select--error" 
+    id="affinityGroupSelect" name="affinityGroup"  aria-describedby="affinityGroupSelect-error"
+  >
+        
+          
+            
+            
+              <option value="Individual"
+                
+                 >Individual</option>
+            
+          
+        
+          
+            
+            
+              <option value="Organisation"
+                
+                 >Organisation</option>
+            
+          
+        
+          
+            
+            
+              <option value="Agent"
+                
+                 >Agent</option>
+            
+          
+        
+      </select>
+      
+  
+
+
+
+</div>
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="usersName">
+        Users name
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="usersName-hint" class="govuk-hint">
+  Optional - defaults to &#x27;TestUser&#x27; if not provided
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="usersName" name="usersName" type="text"   aria-describedby="usersName-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="email">
+        Email
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="email" name="email" type="text"   value="user@test.com" 
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="credential-role-select">
+        Credential Role
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="credential-role-select-hint" class="govuk-hint">
+  Optional - can be set for &#x27;Organisation&#x27; or &#x27;Agent&#x27; affinity groups only. Otherwise the value will be &#x27;User&#x27; (administrator).
+</div>
+
+  
+      
+      <select class="govuk-select" 
+    id="credential-role-select" name="credentialRole"  aria-describedby="credential-role-select-hint"
+  >
+        
+          
+            
+            
+              <option value="User"
+                
+                 >User</option>
+            
+          
+        
+          
+            
+            
+              <option value="Assistant"
+                
+                 >Assistant</option>
+            
+          
+        
+      </select>
+      
+  
+
+
+
+</div>
+
+
+
+
+
+        <div class="divider"></div>
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="accessToken">
+        OAuth (SCP) Access Token
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="accessToken-hint" class="govuk-hint">
+  Optional - any random access token
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="accessToken" name="oauthTokens.accessToken" type="text"   aria-describedby="accessToken-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="refreshToken">
+        OAuth (SCP) Refresh Token
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="refreshToken-hint" class="govuk-hint">
+  Optional - any random refresh token
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="refreshToken" name="oauthTokens.refreshToken" type="text"   aria-describedby="refreshToken-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="idToken">
+        OAuth (SCP) ID Token
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="idToken-hint" class="govuk-hint">
+  Optional - any random ID token
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="idToken" name="oauthTokens.idToken" type="text"   aria-describedby="idToken-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="divider"></div>
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="profile">
+        SCP profile url
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="profile-hint" class="govuk-hint">
+  Optional - a URL
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="profile" name="additionalInfo.profile" type="text"   aria-describedby="profile-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="groupProfile">
+        SCP group profile url
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="groupProfile-hint" class="govuk-hint">
+  Optional - a URL
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="groupProfile" name="additionalInfo.groupProfile" type="text"   aria-describedby="groupProfile-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="emailVerified">
+        SCP user email is verified
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+      
+      <select class="govuk-select" 
+    id="emailVerified" name="additionalInfo.emailVerified" 
+  >
+        
+          
+            
+            
+              <option value="N/A"
+                
+                 >N/A</option>
+            
+          
+        
+          
+            
+            
+              <option value="False"
+                
+                 >False</option>
+            
+          
+        
+          
+            
+            
+              <option value="True"
+                
+                 >True</option>
+            
+          
+        
+      </select>
+      
+  
+
+
+
+</div>
+
+
+
+
+
+        <div class="divider"></div>
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="nino">
+        NINO
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="nino-hint" class="govuk-hint">
+  Optional - any valid formatted Nino, this is required for an Individual with a confidence level of 100 or greater
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="nino" name="nino" type="text"   value="AA123456D"  aria-describedby="nino-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="groupIdentifier">
+        Group Identifier
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="groupIdentifier-hint" class="govuk-hint">
+  Optional - any random value
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="groupIdentifier" name="groupIdentifier" type="text"   aria-describedby="groupIdentifier-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="agentId">
+        Agent ID
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="agentId-hint" class="govuk-hint">
+  Optional - any random value
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="agentId" name="agent.agentId" type="text"   aria-describedby="agentId-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="agentCode">
+        Agent code
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="agentCode-hint" class="govuk-hint">
+  Optional - any random value
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="agentCode" name="agent.agentCode" type="text"   aria-describedby="agentCode-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="agentFriendlyName">
+        Agent friendly name
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="agentFriendlyName-hint" class="govuk-hint">
+  Optional - any random value
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="agentFriendlyName" name="agent.agentFriendlyName" type="text"   aria-describedby="agentFriendlyName-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="unreadMessageCount">
+        Unread message count
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="unreadMessageCount-hint" class="govuk-hint">
+  Optional - any numeric value
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="unreadMessageCount" name="unreadMessageCount" type="text"   aria-describedby="unreadMessageCount-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="sessionId">
+        Session ID
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="sessionId-hint" class="govuk-hint">
+  Optional when Device ID is empty
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="sessionId" name="mdtp.sessionId" type="text"   aria-describedby="sessionId-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label" for="deviceId">
+        Device ID
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+<div id="deviceId-hint" class="govuk-hint">
+  Optional when Session ID is empty
+</div>
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="deviceId" name="mdtp.deviceId" type="text"   aria-describedby="deviceId-hint"
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <input id="submit" class="govuk-button" type="submit" value="Submit">
+
+        <h2 class="govuk-heading-m">Enrolments:</h2>
+        
+
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label govuk-!-display-inline govuk-!-margin-right-9" for="presets-dropdown">
+        Presets
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+      
+      <select class="govuk-select" 
+    id="presets-dropdown" name="presets-dropdown" 
+  >
+        
+      </select>
+      
+  
+
+
+
+</div>
+
+
+
+
+        <button id="add-preset" class="govuk-button govuk-button--secondary" type="button">Add preset</button>
+
+        <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    Enrolments with no Enrolment Key field specified will be ignored
+  </strong>
+</div>
+
+
+        <div class="form-group">
+            <table id="js-enrolments-table" class="govuk-table">
+                <tr>
+                    <th class="govuk-body" style="width: 20%">Enrolment Key</th> 
+                    <th class="govuk-body">Identifier Name</th>
+                    <th class="govuk-body">Identifier Value</th>
+                    <th></th>
+                    <th></th>
+                    <th class="govuk-body">Status</th>
+                </tr>
+                
+            </table>
+            <button id="js-add-enrolment" type="button" class="govuk-button govuk-button--secondary">
+                Add Enrolment
+            </button>
+        </div>
+
+        <div id="delegated-enrolments-fields" class="govuk-visually-hidden" >
+            <h3 class="govuk-heading-m">Delegated Enrolments:</h3>
+
+            <table id="js-delegated-enrolments-table">
+                <tr id="delegated-enrolments-heading">
+                    <th class="govuk-body" style="width: 23%">Delegated Enrolment Key</th>
+                    <th class="govuk-body">Identifier Name</th>
+                    <th class="govuk-body">Identifier Value</th>
+                    <th></th>
+                    <th></th>
+                    <th class="govuk-body" style="width: 20%">Delegated Auth Rule</th>
+                </tr>
+
+                
+            </table>
+
+            <button id="js-add-delegated-enrolment" type="button" class="govuk-button govuk-button--secondary">
+                Add Delegated Enrolment
+            </button>
+            <button id="js-remove-delegated-enrolment" type="button" class="govuk-button govuk-button--secondary">
+                Remove Delegated Enrolment
+            </button>
+        </div>
+
+        <input class="govuk-button" type="submit" value="Submit">
+
+    <h2 class="govuk-heading-m">ITMP data:</h2>
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="itmp.givenName">
+        Given name
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="itmp.givenName" name="itmp.givenName" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="itmp.middleName">
+        Middle name
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="itmp.middleName" name="itmp.middleName" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="itmp.familyName">
+        Family name
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="itmp.familyName" name="itmp.familyName" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="itmp.dateOfBirth">
+        Date of birth
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="itmp.dateOfBirth" name="itmp.dateOfBirth" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <p class="govuk-body govuk-!-font-weight-bold">Address:</p>
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="addressLine1">
+        Line 1
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="addressLine1" name="itmp.address.line1" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="addressLine2">
+        Line 2
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="addressLine2" name="itmp.address.line2" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="addressLine3">
+        Line 3
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="addressLine3" name="itmp.address.line3" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="addressLine4">
+        Line 4
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="addressLine4" name="itmp.address.line4" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="addressLine5">
+        Line 5
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="addressLine5" name="itmp.address.line5" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="addressPostCode">
+        Post code
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="addressPostCode" name="itmp.address.postCode" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="addressCountryName">
+        Country name
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="addressCountryName" name="itmp.address.countryName" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+<div class="govuk-form-group">
+  
+  
+    
+        
+      <label class="govuk-label itmp-label" for="addressCountryCode">
+        Country code
+      </label>
+    
+      
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+       <input class="govuk-input govuk-!-width-one-half" 
+    id="addressCountryCode" name="itmp.address.countryCode" type="text"  
+  
+    
+  > 
+    
+
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <input class="govuk-button" type="submit" value="Submit">
+    
+    </form>
+
+
+
+    </div>
+</div>
+
+
+    </main>
+</div>
+
+    
+  
+
+
+<footer class="govuk-footer" >
+  <div class="govuk-width-container">
+      
+      
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        
+          <h2 class="govuk-visually-hidden">Support links</h2>
+          
+          
+            <ul class="govuk-footer__inline-list">
+            
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="/help/cookies">
+                Cookies
+                </a>
+              </li>
+            
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="/help/privacy">
+                Privacy policy
+                </a>
+              </li>
+            
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="/help/terms-and-conditions">
+                Terms and conditions
+                </a>
+              </li>
+            
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="https://www.gov.uk/help">
+                Help using GOV.UK
+                </a>
+              </li>
+            
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact">
+                Contact
+                </a>
+              </li>
+            
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="https://www.gov.uk/cymraeg" lang="cy" hreflang="cy">
+                Rhestr o Wasanaethau Cymraeg
+                </a>
+              </li>
+            
+            </ul>
+          
+          
+          
+        
+        
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="govuk-footer__licence-logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 483.2 195.7"
+          height="17"
+          width="41"
+        >
+          <path
+            fill="currentColor"
+            d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+          />
+        </svg>
+        <span class="govuk-footer__licence-description">
+            
+  All content is available under the
+    <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+
+        </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <a
+          class="govuk-footer__link govuk-footer__copyright-logo"
+          href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+        >
+          © Crown copyright
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+    
+  
+  <script type="module" src="/auth-login-stub/hmrc-frontend/assets/hmrc-frontend-6.97.0.min.js" nonce="71Ly9O9IBAx61BcVddoXzA=="></script>
+
+    <script nonce="71Ly9O9IBAx61BcVddoXzA==">
+        const caRedirectUrl = '/sign-in-to-hmrc-online-services/identity';
+    </script>
+    <script nonce="71Ly9O9IBAx61BcVddoXzA==" src='/auth-login-stub/assets/javascripts/bf90b6d1a303f4c749d1254a9240eda7-login.js'></script>
+
+
+
+  </body>
+</html>
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<
+11:52:51.824 [DEBUG] io.gatling.core.action.Exit - End user #1
+11:52:51.826 [DEBUG] io.gatling.core.controller.inject.Injector - End user #Low Earners Pensions Payment journey
+11:52:51.826 [INFO ] io.gatling.core.controller.inject.Injector - All users of scenario Low Earners Pensions Payment journey are stopped
+11:52:51.827 [INFO ] io.gatling.core.controller.inject.Injector - Stopping
+11:52:51.828 [INFO ] io.gatling.core.controller.Controller - Injector has stopped, initiating graceful stop
+
+========================================================================================================================
+2026-01-28 11:52:51 GMT                                                                               0s elapsed
+---- Requests -----------------------------------------------------------------------|---Total---|-----OK----|----KO----
+> Global                                                                             |         2 |         1 |         1
+> Standard Payment Journey / get Login Details                                       |         1 |         1 |         0
+> Standard Payment Journey / Post Login Details Standard Payment                     |         1 |         0 |         1
+---- Errors ------------------------------------------------------------------------------------------------------------
+> status.find.is(303), but actually found 400                                                                 1   (100%)
+
+---- Low Earners Pensions Payment journey ------------------------------------------------------------------------------
+[################################################################################################################]  100%
+          waiting:         0 / active:         0  / done:         1
+========================================================================================================================
+
+11:52:51.841 [DEBUG] io.gatling.core.controller.Controller - StatsEngine was stopped
+11:52:51.841 [INFO ] io.gatling.app.Runner - Simulation uk.gov.hmrc.perftests.lepp.LEPPSimulation completed in 0 seconds
+11:52:51.848 [DEBUG] io.netty.buffer.PoolThreadCache - Freed 22 thread-local buffer(s) from thread: gatling-1-1
+11:52:51.848 [DEBUG] io.netty.buffer.PoolThreadCache - Freed 6 thread-local buffer(s) from thread: gatling-1-2
+Parsing log file(s)...
+11:52:51.852 [INFO ] io.gatling.charts.stats.LogFileReader$ - Collected /Users/pankajrode/IdeaProjects/LEPP/low-earners-pensions-payment-performance-tests/target/gatling/leppsimulation-20260128115251048/simulation.log from leppsimulation-20260128115251048
+11:52:51.854 [INFO ] io.gatling.charts.stats.FirstPassParser - First pass
+11:52:51.857 [INFO ] io.gatling.charts.stats.FirstPassParser - First pass done: read 7 records
+11:52:51.862 [INFO ] io.gatling.charts.stats.SecondPassParser - Second pass
+11:52:51.877 [INFO ] io.gatling.charts.stats.SecondPassParser - Second pass: read 7 records
+Parsing log file(s) done in 0s.
+Generating reports...
+11:52:51.960 [DEBUG] io.gatling.charts.report.StatsReportGenerator - Use group cumulated response time stats.
+11:52:51.960 [DEBUG] io.gatling.charts.report.StatsReportGenerator - Use group cumulated response time stats.
+11:52:51.960 [DEBUG] io.gatling.charts.report.StatsReportGenerator - Use group cumulated response time stats.
+
+========================================================================================================================
+---- Global Information -------------------------------------------------------------|---Total---|-----OK----|----KO----
+> request count                                                                      |         2 |         1 |         1
+> min response time (ms)                                                             |        17 |        26 |        17
+> max response time (ms)                                                             |        26 |        26 |        17
+> mean response time (ms)                                                            |        22 |        26 |        17
+> response time std deviation (ms)                                                   |         5 |         0 |         0
+> response time 50th percentile (ms)                                                 |        26 |        26 |        17
+> response time 75th percentile (ms)                                                 |        26 |        26 |        17
+> response time 95th percentile (ms)                                                 |        26 |        26 |        17
+> response time 99th percentile (ms)                                                 |        26 |        26 |        17
+> mean throughput (rps)                                                              |         2 |         1 |         1
+---- Response Time Distribution ----------------------------------------------------------------------------------------
+> OK: t < 800 ms                                                                                              1    (50%)
+> OK: 800 ms <= t < 1200 ms                                                                                   0     (0%)
+> OK: t >= 1200 ms                                                                                            0     (0%)
+> KO                                                                                                          1    (50%)
+---- Errors ------------------------------------------------------------------------------------------------------------
+> status.find.is(303), but actually found 400                                                                 1   (100%)
+========================================================================================================================
+
+Reports generated, please open the following file: file:///Users/pankajrode/IdeaProjects/LEPP/low-earners-pensions-payment-performance-tests/target/gatling/leppsimulation-20260128115251048/index.html
+Global: count of failed events is 0.0 : false (actual : 1.0)
+[error] Simulation LEPPSimulation failed.
+[info] Simulation(s) execution ended.
+[error] Failed tests:
+[error] 	uk.gov.hmrc.perftests.lepp.LEPPSimulation
+[error] (Gatling / test) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 3 s, completed 28 Jan 2026, 11:52:52
