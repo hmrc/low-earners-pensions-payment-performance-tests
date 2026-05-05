@@ -35,33 +35,21 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
 
   val loginUrl: String = authLoginstubRoot + "/auth-login-stub/gg-sign-in?continue=/low-earners-pensions-payment"
 
-  val standardPaymentStartPageUrl: String = baseurl + "//low-earners-pensions-payment/start"
+  val startPageUrl: String = baseurl + "//low-earners-pensions-payment/start"
 
-  val underpaymentStartPageUrl: String = baseurl + "//low-earners-pensions-payment/underpayment/start"
+  val dashboardPageUrl: String = baseurl + "/low-earners-pensions-payment/dashboard"
 
-  val standardPaymentDashboardPageUrl: String = baseurl + "/low-earners-pensions-payment/dashboard"
+  val breakdownPageUrl: String = baseurl + "//low-earners-pensions-payment/breakdown"
 
-  val underpaymentDashboardPageUrl: String = baseurl + "/low-earners-pensions-payment/underpayment/dashboard"
+  val bankDetailsPageUrl: String = baseurl + "//low-earners-pensions-payment/bank-details"
 
-  val standardPaymentBreakdownPageUrl: String = baseurl + "//low-earners-pensions-payment/breakdown"
+  val cyaPageUrl: String = baseurl + "//low-earners-pensions-payment/check-your-answers"
 
-  val underpaymentBreakdownPageUrl: String = baseurl + "//low-earners-pensions-payment/underpayment/breakdown"
+  val confirmationPageUrl: String = baseurl + "//low-earners-pensions-payment/confirmation"
 
-  val standardPaymentBankDetailsPageUrl: String = baseurl + "//low-earners-pensions-payment/bank-details"
+  val csrfPattern = """<input type="hidden" name="csrfToken" value="([^"]+)""""
 
-  val underpaymentBankDetailsPageUrl: String = baseurl + "//low-earners-pensions-payment/underpayment/bank-details"
-
-  val standardPaymentCYAPageUrl: String = baseurl + "//low-earners-pensions-payment/check-your-answers"
-
-  val underpaymentCYAPageUrl: String = baseurl + "//low-earners-pensions-payment/underpayment/check-your-answers"
-
-  val standardPaymentConfirmationPageUrl: String = baseurl + "//low-earners-pensions-payment/confirmation"
-
-  val underpaymentConfirmationPageUrl: String = baseurl + "//low-earners-pensions-payment/underpayment/confirmation"
-
-  val CsrfPattern = """<input type="hidden" name="csrfToken" value="([^"]+)""""
-
-  def saveCsrfToken(): CheckBuilder[RegexCheckType, String] = regex(_ => CsrfPattern).saveAs("csrfToken")
+  def saveCsrfToken(): CheckBuilder[RegexCheckType, String] = regex(_ => csrfPattern).saveAs("csrfToken")
 
   val csrfToken: Expression[String] = "#{csrfToken}"
 
@@ -72,139 +60,75 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       .check(css("input[name=csrfToken]", "value").saveAs("csrfToken"))
   }
 
-  def postLoginStandardPayment: HttpRequestBuilder = {
+  def postLogin: HttpRequestBuilder = {
     http("Post Login Details Standard Payment")
       .post(loginUrl)
       .formParam("csrfToken", _("csrfToken").as[String])
-      .formParam("redirectionUrl",_ => standardPaymentStartPageUrl)
+      .formParam("redirectionUrl",_ => startPageUrl)
       .formParam("credentialStrength",_ => "strong")
       .formParam("confidenceLevel",_ => "250")
-      .formParam("nino",_ => "AA123456D")
+      .formParam("nino",_ => "AA000003D")
       .formParam("affinityGroup",_ => "Individual")
       .formParam("authorityId", _ => "someId")
+      .formParam("enrolment[0].name",_ => "HMRC-PI")
+      .formParam("enrolment[0].taxIdentifier[0].name",_ => "")
+      .formParam("enrolment[0].taxIdentifier[0].value",_ => "")
+      .formParam("enrolment[0].state",_ => "Activated")
       .check(status.is(303))
   }
 
-  def postLoginUnderpayment: HttpRequestBuilder = {
-    http("Post Login Details Underpayment")
-      .post(loginUrl)
-      .formParam("csrfToken", _("csrfToken").as[String])
-      .formParam("redirectionUrl", _ => underpaymentStartPageUrl)
-      .formParam("credentialStrength", _ => "strong")
-      .formParam("confidenceLevel", _ => "250")
-      .formParam("nino", _ => "AA123456D")
-      .formParam("affinityGroup",_ => "Individual")
-      .formParam("authorityId", _ => "someId")
-      .check(status.is(303))
-  }
-
-  def getStandardPaymentStartPage: HttpRequestBuilder = {
+  def getStartPage: HttpRequestBuilder = {
     http("Get Start Page Standard Payment")
-      .get(standardPaymentStartPageUrl: String)
+      .get(startPageUrl: String)
       .check(status.is(200))
   }
 
-  def getUnderpaymentStartPage: HttpRequestBuilder = {
-    http("Get Start Page Underpayment")
-      .get(underpaymentStartPageUrl: String)
-      .check(status.is(200))
-  }
-
-  def getStandardPaymentDashboardPage: HttpRequestBuilder = {
+  def getDashboardPage: HttpRequestBuilder = {
     http("Get Dashboard Page Standard Payment")
-      .get(standardPaymentDashboardPageUrl: String)
+      .get(dashboardPageUrl: String)
       .check(status.is(200))
   }
 
-  def getUnderpaymentDashboardPage: HttpRequestBuilder = {
-    http("Get Dashboard Page Underpayment")
-      .get(underpaymentDashboardPageUrl: String)
-      .check(status.is(200))
-  }
-
-  def getStandardPaymentBreakdownPage: HttpRequestBuilder = {
+  def getBreakdownPage: HttpRequestBuilder = {
     http("Get Breakdown Page Standard Payment")
-      .get(standardPaymentBreakdownPageUrl: String)
+      .get(breakdownPageUrl: String)
       .check(status.is(200))
   }
 
-  def getUnderpaymentBreakdownPage: HttpRequestBuilder = {
-    http("Get Breakdown Page Underpayment")
-      .get(underpaymentBreakdownPageUrl: String)
-      .check(status.is(200))
-  }
-
-  def getStandardPaymentBankDetailsPage: HttpRequestBuilder = {
+  def getBankDetailsPage: HttpRequestBuilder = {
     http("Get Bank Details Page Standard Payment")
-      .get(standardPaymentBankDetailsPageUrl: String)
+      .get(bankDetailsPageUrl: String)
       .check(status.is(200))
       .check(css("input[name=csrfToken]", "value").saveAs("csrfToken"))
   }
 
-  def postStandardPaymentBankDetailsPage: HttpRequestBuilder = {
+  def postBankDetailsPage: HttpRequestBuilder = {
     http("Post to Bank Details Page Standard Payment")
-      .post(standardPaymentBankDetailsPageUrl: String)
+      .post(bankDetailsPageUrl: String)
       .formParam("csrfToken", _("csrfToken").as[String])
-      .formParam("name",_=> "Teddy Sherringham")
-      .formParam("sortCode",_=> "55-00-33")
-      .formParam("accountNumber",_=> "12345678")
-      .formParam("buildingSocietyRollNumber",_=> "0123456789")
+      .formParam("bankDetails_accountName",_=> "Melvin Loper")
+      .formParam("bankDetails_sortCode",_=> "207106")
+      .formParam("bankDetail_accountNumber",_=> "44311677")
+      .formParam("bankDetail_rollNumber",_=> "0123456789")
       .check(status.is(303))
   }
 
-  def getUnderpaymentBankDetailsPage: HttpRequestBuilder = {
-    http("Get Bank Details Page Underpayment")
-      .get(underpaymentBankDetailsPageUrl: String)
-      .check(status.is(200))
-      .check(css("input[name=csrfToken]", "value").saveAs("csrfToken"))
-  }
-
-  def postUnderpaymentBankDetailsPage: HttpRequestBuilder = {
-    http("Post to Bank Details Page Underpayment")
-      .post(standardPaymentBankDetailsPageUrl: String)
-      .formParam("csrfToken", _("csrfToken").as[String])
-      .formParam("name",_=> "John Smith")
-      .formParam("sortCode",_=> "00-11-22")
-      .formParam("accountNumber",_=> "12345678")
-      .formParam("buildingSocietyRollNumber",_=> "0123456789")
-      .check(status.is(303))
-  }
-
-  def getStandardPaymentCYAPage: HttpRequestBuilder = {
+  def getCYAPage: HttpRequestBuilder = {
     http("Get Check Your Answers Page Standard Payment")
-      .get(standardPaymentCYAPageUrl)
+      .get(cyaPageUrl)
       .check(status.is(200))
   }
 
-  def postStandardPaymentCYAPage: HttpRequestBuilder = {
+  def postCYAPage: HttpRequestBuilder = {
     http("Post Check Your Answers Page Standard Payment")
-      .post(standardPaymentCYAPageUrl)
+      .post(cyaPageUrl)
       .formParam("csrfToken", _("csrfToken").as[String])
       .check(status.is(303))
   }
 
-  def getUnderpaymentCYAPage: HttpRequestBuilder = {
-    http("Get Check Your Answers Page Underpayment")
-      .get(underpaymentCYAPageUrl)
-      .check(status.is(200))
-  }
-
-  def postUnderpaymentCYAPage: HttpRequestBuilder = {
-    http("Post Check Your Answers Page Underpayment")
-      .post(underpaymentCYAPageUrl)
-      .formParam("csrfToken", _("csrfToken").as[String])
-      .check(status.is(303))
-  }
-
-  def getStandardPaymentConfirmationPage: HttpRequestBuilder = {
+  def getConfirmationPage: HttpRequestBuilder = {
     http("Get Confirmation Page Standard Payment")
-      .get(standardPaymentConfirmationPageUrl)
-      .check(status.is(200))
-  }
-
-  def getUnderpaymentConfirmationPage: HttpRequestBuilder = {
-    http("Get Confirmation Page Underpayment")
-      .get(underpaymentConfirmationPageUrl)
+      .get(confirmationPageUrl)
       .check(status.is(200))
   }
 
