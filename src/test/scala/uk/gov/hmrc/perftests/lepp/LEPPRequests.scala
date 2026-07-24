@@ -23,29 +23,30 @@ import io.gatling.http.request.builder.HttpRequestBuilder
 import uk.gov.hmrc.performance.conf.{HttpConfiguration, ServicesConfiguration}
 import io.gatling.core.check.regex.RegexCheckType
 import io.gatling.core.session.Expression
-
+import uk.gov.hmrc.perftests.lepp.FormParams.*
 
 object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
 
   val baseurl: String = baseUrlFor("base-url")
 
-  val route: String = "low-earners-pensions-payment"
+  val route: String = "accept-your-low-earners-pension-payment"
 
   val authLoginstubRoot: String = baseUrlFor("auth-login-stub")
 
-  val loginUrl: String = authLoginstubRoot + "/auth-login-stub/gg-sign-in?continue=/low-earners-pensions-payment"
+  val loginUrl: String =
+    authLoginstubRoot + "/auth-login-stub/gg-sign-in?continue=/accept-your-low-earners-pension-payment"
 
-  val startPageUrl: String = baseurl + "//low-earners-pensions-payment/start"
+  val startPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/start"
 
-  val dashboardPageUrl: String = baseurl + "/low-earners-pensions-payment/dashboard"
+  val dashboardPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/payments"
 
-  val breakdownPageUrl: String = baseurl + "//low-earners-pensions-payment/breakdown"
+  val breakdownPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/payment-breakdown"
 
-  val bankDetailsPageUrl: String = baseurl + "//low-earners-pensions-payment/bank-details"
+  val bankDetailsPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/bank-details"
 
-  val cyaPageUrl: String = baseurl + "//low-earners-pensions-payment/check-your-answers"
+  val cyaPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/check-your-answers"
 
-  val confirmationPageUrl: String = baseurl + "//low-earners-pensions-payment/confirmation"
+  val confirmationPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/bank-details-received"
 
   val csrfPattern = """<input type="hidden" name="csrfToken" value="([^"]+)""""
 
@@ -53,84 +54,66 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
 
   val csrfToken: Expression[String] = "#{csrfToken}"
 
-  def getLogin: HttpRequestBuilder = {
+  def getLogin: HttpRequestBuilder =
     http("get Login Details")
       .get(loginUrl)
       .check(status.is(200))
       .check(css("input[name=csrfToken]", "value").saveAs("csrfToken"))
-  }
 
-  def postLogin: HttpRequestBuilder = {
-    http("Post Login Details Standard Payment")
-      .post(loginUrl)
-      .formParam("csrfToken", _("csrfToken").as[String])
-      .formParam("redirectionUrl",_ => startPageUrl)
-      .formParam("credentialStrength",_ => "strong")
-      .formParam("confidenceLevel",_ => "250")
-      .formParam("nino",_ => "AA000003D")
-      .formParam("affinityGroup",_ => "Individual")
-      .formParam("authorityId", _ => "someId")
-      .formParam("enrolment[0].name",_ => "HMRC-PI")
-      .formParam("enrolment[0].taxIdentifier[0].name",_ => "")
-      .formParam("enrolment[0].taxIdentifier[0].value",_ => "")
-      .formParam("enrolment[0].state",_ => "Activated")
-      .check(status.is(303))
-  }
+  def postLogin(nino: String): HttpRequestBuilder =
+    addFormParams(
+      http("Post Login Details Standard Payment")
+        .post(loginUrl)
+        .formParam("csrfToken", _("csrfToken").as[String])
+        .formParam("redirectionUrl", _ => startPageUrl)
+        .formParam("nino", _ => nino),
+      loginFormParams
+    ).check(status.is(303))
 
-  def getStartPage: HttpRequestBuilder = {
+  def getStartPage: HttpRequestBuilder =
     http("Get Start Page Standard Payment")
       .get(startPageUrl: String)
-      .check(status.is(200))
-  }
+      .check(status.is(200)) // This is a real page render, so it's 200 OK!
 
-  def getDashboardPage: HttpRequestBuilder = {
+  def getDashboardPage: HttpRequestBuilder =
     http("Get Dashboard Page Standard Payment")
       .get(dashboardPageUrl: String)
       .check(status.is(200))
-  }
 
-  def getBreakdownPage: HttpRequestBuilder = {
+  def getBreakdownPage: HttpRequestBuilder =
     http("Get Breakdown Page Standard Payment")
       .get(breakdownPageUrl: String)
       .check(status.is(200))
-  }
 
   def getBankDetailsPage: HttpRequestBuilder = {
+    println(s"=== DEBUG === bankDetailsPageUrl is: $bankDetailsPageUrl")
     http("Get Bank Details Page Standard Payment")
       .get(bankDetailsPageUrl: String)
       .check(status.is(200))
       .check(css("input[name=csrfToken]", "value").saveAs("csrfToken"))
   }
 
-  def postBankDetailsPage: HttpRequestBuilder = {
-    http("Post to Bank Details Page Standard Payment")
-      .post(bankDetailsPageUrl: String)
-      .formParam("csrfToken", _("csrfToken").as[String])
-      .formParam("bankDetails_accountName",_=> "Melvin Loper")
-      .formParam("bankDetails_sortCode",_=> "207106")
-      .formParam("bankDetail_accountNumber",_=> "44311677")
-      .formParam("bankDetail_rollNumber",_=> "0123456789")
-      .check(status.is(303))
-  }
+  def postBankDetailsPage: HttpRequestBuilder =
+    addFormParams(
+      http("Post to Bank Details Page Standard Payment")
+        .post(bankDetailsPageUrl)
+        .formParam("csrfToken", _("csrfToken").as[String]),
+      bankDetailsFormParams
+    ).check(status.is(303))
 
-  def getCYAPage: HttpRequestBuilder = {
+  def getCYAPage: HttpRequestBuilder =
     http("Get Check Your Answers Page Standard Payment")
       .get(cyaPageUrl)
       .check(status.is(200))
-  }
 
-  def postCYAPage: HttpRequestBuilder = {
+  def postCYAPage: HttpRequestBuilder =
     http("Post Check Your Answers Page Standard Payment")
       .post(cyaPageUrl)
       .formParam("csrfToken", _("csrfToken").as[String])
       .check(status.is(303))
-  }
 
-  def getConfirmationPage: HttpRequestBuilder = {
+  def getConfirmationPage: HttpRequestBuilder =
     http("Get Confirmation Page Standard Payment")
       .get(confirmationPageUrl)
       .check(status.is(200))
-  }
-
 }
-

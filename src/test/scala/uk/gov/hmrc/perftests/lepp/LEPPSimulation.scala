@@ -22,20 +22,20 @@ import uk.gov.hmrc.perftests.lepp.LEPPRequests._
 
 class LEPPSimulation extends PerformanceTestRunner {
 
-    setup(
-      id = "low-earners-pensions-payment-journey",
-      description = "Standard Payment Journey"
-    ).withRequests(
-      getLogin,
-      postLogin,
-      getStartPage,
-      getDashboardPage,
-      getBreakdownPage,
-//      getBankDetailsPage,
-//      postBankDetailsPage,
-//      getCYAPage,
-//      postCYAPage,
-//      getConfirmationPage
-    )
-      runSimulation()
+  setup(
+    id = "low-earners-pensions-payment-journey",
+    description = "Standard Payment Journey"
+  ).withRequests(
+    getLogin,
+    postLogin("AA123456D"),
+    getStartPage,
+    getDashboardPage,
+    getBreakdownPage,
+    getBankDetailsPage,
+    postBankDetailsPage,
+    getCYAPage,
+    postCYAPage,
+    getConfirmationPage
+  )
+  runSimulation()
 }
