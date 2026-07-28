@@ -6,8 +6,8 @@ lazy val root = (project in file("."))
       scalaVersion := "3.3.7",
       //implicitConversions & postfixOps are Gatling recommended -language settings
       scalacOptions ++= Seq("-feature", "-language:implicitConversions", "-language:postfixOps"),
-      // Redirect Gatling output to the default Jenkins HTML publisher location
-      Gatling / target := target.value / "test-reports" / "html-report",
+      // Output directly into target/test-reports/html-report without nested timestamp folder
+      Gatling / target := target.value / "test-reports",
       // Enabling sbt-auto-build plugin provides DefaultBuildSettings with default `testOptions` from `sbt-settings` plugin.
       // These testOptions are not compatible with `sbt gatling:test`. So we have to override testOptions here.
       retrieveManaged := true,
