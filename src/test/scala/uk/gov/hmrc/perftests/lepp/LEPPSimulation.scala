@@ -44,6 +44,7 @@ class LEPPSimulation extends PerformanceTestRunner {
   ).withRequests(
     getLogin,
     postLogin("AA123456D"), // this gives you the session with auth cookies
+    followLoginRedirect,
     waitForSession,
     waitForSession,
     waitForSession,
