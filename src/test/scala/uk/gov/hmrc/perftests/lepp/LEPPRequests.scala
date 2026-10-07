@@ -118,11 +118,6 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       .get(confirmationPageUrl)
       .check(status.is(200))
 
-  val waitForSession: HttpRequestBuilder =
-    http("Wait For Auth Session")
-      .get(sessionUrl)
-      .check(status.is(200))
-
   def getApiToken: HttpRequestBuilder =
     http("Get API Bearer Token")
       .get(sessionUrl)
