@@ -129,7 +129,7 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       .check(
         status.is(200),
         bodyString.saveAs("pageBody"),
-        regex("""data-session-id="authToken"[^>]*>\s*<code[^>]*>(Bearer [^,]+)""")
+        regex("""(?s)<td[^>]*data-session-id=["']authToken["'][^>]*>.*?(Bearer\s+[^,\s<]+)""")
           .saveAs("bearerToken")
       )
 
