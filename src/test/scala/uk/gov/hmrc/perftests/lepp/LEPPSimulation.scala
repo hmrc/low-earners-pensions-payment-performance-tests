@@ -37,16 +37,15 @@ class LEPPSimulation extends PerformanceTestRunner {
     postCYAPage,
     getConfirmationPage
   )
-
+  
   setup(
-    id = "lepp-backend-api-journey",
-    description = "API Payment Journey"
+    id = "lepp-backend-pta-journey",
+    description = "PTA - LEPP Journey"
   ).withRequests(
     getLogin,
     postLogin("AA123456D"), // this gives you the session with auth cookies
     getApiToken, // new request — extracts bearer token from session
     getLeppSummary // new request — uses bearer token + correlation ID
   )
-
   runSimulation()
 }
