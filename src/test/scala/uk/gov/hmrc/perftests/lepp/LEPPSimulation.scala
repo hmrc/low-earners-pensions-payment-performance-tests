@@ -81,21 +81,14 @@ class LEPPSimulation extends PerformanceTestRunner {
 
     val (loginStatus, _) = request("POST", loginUrl, Some(allParams), followRedirects = false)
     println(s"[SETUP] Login POST status: $loginStatus")
-    println(s"[SETUP] Cookies after login: ${cookieStore.mkString(", ")}")
 
     // Step 3: GET session page and extract bearer token
     val (sessionStatus, sessionPage) = request("GET", sessionUrl)
+    println(s"[SETUP] Session page status: $sessionStatus")
+    println(s"[SETUP] Token extracted: ${SharedToken.bearerToken.take(40)}...")
 
     val tokenRegex                   = """(?s)<td[^>]*data-session-id=["']authToken["'][^>]*>.*?(Bearer\s+[^,\s<]+)""".r
     SharedToken.bearerToken = tokenRegex.findFirstMatchIn(sessionPage).map(_.group(1)).getOrElse("")
-    println(s"[SETUP] Token extracted: ${SharedToken.bearerToken.take(40)}...")
-    println(s"[SETUP] Session page status: $sessionStatus")
-    println(s"[SETUP] Session page (first 2000 chars): ${sessionPage.take(2000)}")
-    println(s"[SETUP] authLoginstubRoot = $authLoginstubRoot")
-    println(s"[SETUP] sessionUrl = $sessionUrl")
-    println(s"[SETUP] loginUrl = $loginUrl")
-    println(s"[SETUP] Cookies after login: ${cookieStore.mkString(", ")}")
-
   }
 
   setup(

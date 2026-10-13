@@ -91,7 +91,6 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       .check(status.is(200))
 
   def getBankDetailsPage: HttpRequestBuilder = {
-    println(s"=== DEBUG === bankDetailsPageUrl is: $bankDetailsPageUrl")
     http("Get Bank Details Page Standard Payment")
       .get(bankDetailsPageUrl: String)
       .check(status.is(200))
@@ -137,12 +136,5 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       .get(leppSummaryUrl)
       .header("Authorization", _ => SharedToken.bearerToken)
       .header("CorrelationId", _ => java.util.UUID.randomUUID().toString)
-      .transformResponse { (response, session) =>
-        println(s"[DEBUG] leppSummaryUrl = $leppSummaryUrl")
-        println(s"[SETUP] SharedToken.bearerToken in getLEPPSummary: ${SharedToken.bearerToken.take(40)}...")
-        println(s"[DEBUG] response status = ${response.status.code()}")
-        println(s"[DEBUG] response body   = ${response.body.string}")
-        response
-      }
       .check(status.is(200))
 }
