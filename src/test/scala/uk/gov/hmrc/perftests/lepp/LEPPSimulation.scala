@@ -45,8 +45,9 @@ class LEPPSimulation extends PerformanceTestRunner {
         out.writeBytes(b)
         out.flush()
       }
+      // After getResponseCode, capture ALL response headers for Set-Cookie (case-insensitive)
       conn.getHeaderFields.asScala
-        .filter(_._1 == "Set-Cookie")
+        .filter { case (k, _) => k != null && k.equalsIgnoreCase("Set-Cookie") }
         .values
         .flatMap(_.asScala)
         .foreach { c =>
@@ -80,6 +81,7 @@ class LEPPSimulation extends PerformanceTestRunner {
 
     val (loginStatus, _) = request("POST", loginUrl, Some(allParams), followRedirects = false)
     println(s"[SETUP] Login POST status: $loginStatus")
+    println(s"[SETUP] Cookies after login: ${cookieStore.mkString(", ")}")
 
     // Step 3: GET session page and extract bearer token
     val (sessionStatus, sessionPage) = request("GET", sessionUrl)
