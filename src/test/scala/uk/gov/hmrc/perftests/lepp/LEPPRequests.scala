@@ -139,7 +139,7 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       .header("CorrelationId", _ => java.util.UUID.randomUUID().toString)
       .transformResponse { (response, session) =>
         println(s"[DEBUG] leppSummaryUrl = $leppSummaryUrl")
-        println(s"[DEBUG] bearerToken    = ${session("bearerToken").asOption[String]}")
+        println(s"[SETUP] SharedToken.bearerToken in getLEPPSummary: ${SharedToken.bearerToken.take(40)}...")
         println(s"[DEBUG] response status = ${response.status.code()}")
         println(s"[DEBUG] response body   = ${response.body.string}")
         response
