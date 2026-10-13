@@ -50,6 +50,10 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
   def saveCsrfToken(): CheckBuilder[RegexCheckType, String] = regex(_ => csrfPattern).saveAs("csrfToken")
   val csrfToken: Expression[String]                         = "#{csrfToken}"
 
+  object SharedToken {
+    @volatile var bearerToken: String = ""
+  }
+
   def getLogin: HttpRequestBuilder =
     http("get Login Details")
       .get(loginUrl)
@@ -131,7 +135,14 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
   def getLeppSummary: HttpRequestBuilder =
     http("Get LEPP Summary")
       .get(leppSummaryUrl)
-      .header("Authorization", "#{bearerToken}")
+      .header("Authorization", _ => SharedToken.bearerToken)
       .header("CorrelationId", _ => java.util.UUID.randomUUID().toString)
+      .transformResponse { (response, session) =>
+        println(s"[DEBUG] leppSummaryUrl = $leppSummaryUrl")
+        println(s"[DEBUG] bearerToken    = ${session("bearerToken").asOption[String]}")
+        println(s"[DEBUG] response status = ${response.status.code()}")
+        println(s"[DEBUG] response body   = ${response.body.string}")
+        response
+      }
       .check(status.is(200))
 }
