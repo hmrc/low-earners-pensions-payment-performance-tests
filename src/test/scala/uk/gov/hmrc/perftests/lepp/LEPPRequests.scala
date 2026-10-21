@@ -27,32 +27,32 @@ import uk.gov.hmrc.perftests.lepp.FormParams.*
 
 object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
 
-  val baseurl: String = baseUrlFor("base-url")
+  val baseurl: String        = baseUrlFor("base-url")
+  val baseBackendUrl: String = baseUrlFor("base-backend-url")
 
   val route: String = "accept-your-low-earners-pension-payment"
 
   val authLoginstubRoot: String = baseUrlFor("auth-login-stub")
 
-  val loginUrl: String =
+  val loginUrl: String   =
     authLoginstubRoot + "/auth-login-stub/gg-sign-in?continue=/accept-your-low-earners-pension-payment"
+  val sessionUrl: String = authLoginstubRoot + "/auth-login-stub/session"
 
-  val startPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/start"
-
-  val dashboardPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/payments"
-
-  val breakdownPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/payment-breakdown"
-
-  val bankDetailsPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/bank-details"
-
-  val cyaPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/check-your-answers"
-
+  val startPageUrl: String        = baseurl + "/accept-your-low-earners-pension-payment/start"
+  val dashboardPageUrl: String    = baseurl + "/accept-your-low-earners-pension-payment/payments"
+  val breakdownPageUrl: String    = baseurl + "/accept-your-low-earners-pension-payment/payment-breakdown"
+  val bankDetailsPageUrl: String  = baseurl + "/accept-your-low-earners-pension-payment/bank-details"
+  val cyaPageUrl: String          = baseurl + "/accept-your-low-earners-pension-payment/check-your-answers"
   val confirmationPageUrl: String = baseurl + "/accept-your-low-earners-pension-payment/bank-details-received"
+  val leppSummaryUrl: String      = baseBackendUrl + "/low-earners-pensions-payment/get-lepp-summary"
 
-  val csrfPattern = """<input type="hidden" name="csrfToken" value="([^"]+)""""
-
+  val csrfPattern                                           = """<input type="hidden" name="csrfToken" value="([^"]+)""""
   def saveCsrfToken(): CheckBuilder[RegexCheckType, String] = regex(_ => csrfPattern).saveAs("csrfToken")
+  val csrfToken: Expression[String]                         = "#{csrfToken}"
 
-  val csrfToken: Expression[String] = "#{csrfToken}"
+  object SharedToken {
+    @volatile var bearerToken: String = ""
+  }
 
   def getLogin: HttpRequestBuilder =
     http("get Login Details")
@@ -70,6 +70,11 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       loginFormParams
     ).check(status.is(303))
 
+  val followLoginRedirect: HttpRequestBuilder =
+    http("Follow Login Redirect")
+      .get(startPageUrl)
+      .check(status.is(200))
+
   def getStartPage: HttpRequestBuilder =
     http("Get Start Page Standard Payment")
       .get(startPageUrl: String)
@@ -86,7 +91,6 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
       .check(status.is(200))
 
   def getBankDetailsPage: HttpRequestBuilder = {
-    println(s"=== DEBUG === bankDetailsPageUrl is: $bankDetailsPageUrl")
     http("Get Bank Details Page Standard Payment")
       .get(bankDetailsPageUrl: String)
       .check(status.is(200))
@@ -115,5 +119,22 @@ object LEPPRequests extends HttpConfiguration with ServicesConfiguration {
   def getConfirmationPage: HttpRequestBuilder =
     http("Get Confirmation Page Standard Payment")
       .get(confirmationPageUrl)
+      .check(status.is(200))
+
+  def getApiToken: HttpRequestBuilder =
+    http("Get API Bearer Token")
+      .get(sessionUrl)
+      .check(
+        status.is(200),
+        bodyString.saveAs("pageBody"),
+        regex("""(?s)<td[^>]*data-session-id=["']authToken["'][^>]*>.*?(Bearer\s+[^,\s<]+)""")
+          .saveAs("bearerToken")
+      )
+
+  def getLeppSummary: HttpRequestBuilder =
+    http("Get LEPP Summary")
+      .get(leppSummaryUrl)
+      .header("Authorization", _ => SharedToken.bearerToken)
+      .header("CorrelationId", _ => java.util.UUID.randomUUID().toString)
       .check(status.is(200))
 }
